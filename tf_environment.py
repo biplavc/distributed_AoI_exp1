@@ -96,10 +96,10 @@ sample_error_in_CSI = False ## has no meaning if CSI_as_state=False; if CSI_as_s
 MAX_STEPS = 10 # 20  
 
 set_gamma = 0.99
-UL_capacity = 2 # L, sample
+UL_capacity = 3 # 2 # L, sample
 
-DL_capacity = 2 # K, update
-random_episodes = 100_000
+DL_capacity = 2 # 4 # K, update
+random_episodes = 10000 # 100_000
 coverage_capacity = 3 # max users 1 UAV can cover, used in create_graph_1
 
 num_iterations = 1_000_000

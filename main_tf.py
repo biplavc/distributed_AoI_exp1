@@ -67,12 +67,15 @@ def do_scheduling(deployment, I, scheduler):
         print(f"under experiment {experiment}", file = open(folder_name + "/results.txt", "a"), flush = True)
 
         drones_needed           = 1
-        users_per_drone         = [5]
-        adj_matrix              = np.array([[0, 1, 1, 0, 0],
-                                            [1, 0, 0, 1, 0],
-                                            [0, 0, 0, 1, 1],
-                                            [1, 0, 1, 0, 0],
-                                            [1, 1, 0, 0, 0]])
+        users_per_drone         = [3]
+        # adj_matrix              = np.array([[0, 1, 1, 0, 0],
+        #                                     [0, 0, 1, 1, 0],
+        #                                     [0, 0, 0, 1, 1],
+        #                                     [1, 0, 0, 0, 1],
+        #                                     [1, 1, 0, 0, 0]])
+        adj_matrix              = np.array([[0, 1, 1],
+                                            [1, 0, 1],
+                                            [1, 1, 0]])
         
         tx_rx_pairs = []
         tx_users    = []
@@ -265,7 +268,7 @@ if __name__ == '__main__':
 
     deployments = ["RP"] #, "RP"] #, "MDS"]
     
-    schedulers  = ["random", "greedy", "MAD", "dqn"] ##     scheduler_options  = ["random", "greedy", "MAD", "dqn", "c51"]
+    schedulers  = ["MAD"] ##     scheduler_options  = ["random", "greedy", "MAD", "dqn", "c51"]
     
     limit_memory = False ## enabling this makes the code not being able to find CUDA device
     
@@ -314,7 +317,7 @@ if __name__ == '__main__':
         periodic_generation = True
     
     if test_case:
-        users = [5] ## will get changed accordingly inside the loop above
+        users = [3] ## will get changed accordingly inside the loop above
     else:
         users = [8,10]
 

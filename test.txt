@@ -1,0 +1,1655 @@
+GPUs are []
+experiment is 1 with test_case = True, packet_loss = False, periodic_generation = False
+passed arguments are [('RP', 5, 'MAD')]
+
+
+mad started for 5 users , coverage = [[10, 11, 12, 13, 14]] with update_loss = {(10, 11): -1, (10, 12): -1, (11, 12): -1, (11, 13): -1, (12, 13): -1, (12, 14): -1, (13, 10): -1, (13, 14): -1, (14, 10): -1, (14, 11): -1}, sample_loss = {10: -1, 11: -1, 12: -1, 13: -1, 14: -1}, periodicity = {10: 1, 11: 1, 12: 1, 13: 1, 14: 1}, tx_rx_pairs = [[10, 11], [10, 12], [11, 12], [11, 13], [12, 13], [12, 14], [13, 10], [13, 14], [14, 10], [14, 11]], tx_users = [10, 11, 12, 13, 14] and RP deployment
+
+
+tx_rx_pairs = [[10, 11], [10, 12], [11, 12], [11, 13], [12, 13], [12, 14], [13, 10], [13, 14], [14, 10], [14, 11]] with length 10 and tx_users = [10, 11, 12, 13, 14] with length 5
+user list = [10, 11, 12, 13, 14]
+UAV list  = [0]
+self.n_users = 5, self.n_UAVs = 1, self.act_coverage = {0: [10, 11, 12, 13, 14]}, self.update_loss = {(10, 11): -1, (10, 12): -1, (11, 12): -1, (11, 13): -1, (12, 13): -1, (12, 14): -1, (13, 10): -1, (13, 14): -1, (14, 10): -1, (14, 11): -1}, self.sample_loss = {10: -1, 11: -1, 12: -1, 13: -1, 14: -1}, self.UAV_list = [0], self.user_list = [10, 11, 12, 13, 14]
+
+eval_net has a action_space of size  (450, 2, 2)
+
+eval_net started and age_dist_UAV = {10: [], 11: [], 12: [], 13: [], 14: []}, age_dist_dest = {(10, 11): [], (10, 12): [], (11, 12): [], (11, 13): [], (12, 13): [], (12, 14): [], (13, 10): [], (13, 14): [], (14, 10): [], (14, 11): []}, tx_attempt_dest = {(10, 11): [], (10, 12): [], (11, 12): [], (11, 13): [], (12, 13): [], (12, 14): [], (13, 10): [], (13, 14): [], (14, 10): [], (14, 11): []}, tx_attempt_UAV = {10: [], 11: [], 12: [], 13: [], 14: []}
+
+
+eval_net after reset, episode 1 begins with self._state = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1] with shape (16,) when CSI_as_state = False and sample_error_in_CSI = False
+
+age difference of users at dest is {(10, 11): 0, (10, 12): 0, (11, 12): 0, (11, 13): 0, (12, 13): 0, (12, 14): 0, (13, 10): 0, (13, 14): 0, (14, 10): 0, (14, 11): 0} where age at dest is {(10, 11): 1, (10, 12): 1, (11, 12): 1, (11, 13): 1, (12, 13): 1, (12, 14): 1, (13, 10): 1, (13, 14): 1, (14, 10): 1, (14, 11): 1}, age at UAV is {10: 1, 11: 1, 12: 1, 13: 1, 14: 1}
+mad_age_dest = {(10, 11): 0, (10, 12): 0, (11, 12): 0, (11, 13): 0, (12, 13): 0, (12, 14): 0, (13, 10): 0, (13, 14): 0, (14, 10): 0, (14, 11): 0}
+updated_users = [[10, 12], [13, 10]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 1, 12: 1, 13: 1, 14: 1} when the general UAV age was {10: 1, 11: 1, 12: 1, 13: 1, 14: 1}
+users sampled under UAV 0 are [14, 13]
+sampled_users = [14, 13]
+updated_users are [[10, 12], [13, 10]], sampled_users = [13, 14], mad_action = [([14, 13], [[10, 12], [13, 10]])], actual_mad_action = 418
+
+
+current episode = 0
+
+
+ step = 1, mad selection is 418, actual action is [(13, 14), ([10, 12], [13, 10])], updated_users = [[10, 12], [13, 10]], sampled_users = [13, 14]
+user  10  was not sampled
+user  11  was not sampled
+user  12  was not sampled
+ for user 13, chance_sample_loss = 0.38 and eval_env.sample_loss = -1 
+slot =  0  - user  13  period =  1  was selected to sample and sampled
+ for user 14, chance_sample_loss = 0.87 and eval_env.sample_loss = -1 
+slot =  0  - user  14  period =  1  was selected to sample and sampled
+time = 1, sample_time = {10: [], 11: [], 12: [], 13: [1], 14: [1]}
+tx_attempt_UAV has become {10: [0], 11: [0], 12: [0], 13: [1], 14: [1]} and tx_attempt_dest has become {(10, 11): [0], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [0], (14, 11): [0]}
+
+ step = 1 of episode 0 ended, UAV_age = {10: 2, 11: 2, 12: 2, 13: 1, 14: 1}, dest_age = {(10, 11): 2, (10, 12): 2, (11, 12): 2, (11, 13): 2, (12, 13): 2, (12, 14): 2, (13, 10): 2, (13, 14): 2, (14, 10): 2, (14, 11): 2} with sum = 20, tx_attempt_UAV = {10: [0], 11: [0], 12: [0], 13: [1], 14: [1]}, tx_attempt_dest = {(10, 11): [0], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [0], (14, 11): [0]}
+episode_wise_attempt_sample = 2
+episode_wise_success_sample = 2
+episode_wise_attempt_update = 0
+episode_wise_success_update = 0
+age difference of users at dest is {(10, 11): 0, (10, 12): 0, (11, 12): 0, (11, 13): 0, (12, 13): 0, (12, 14): 0, (13, 10): 1, (13, 14): 1, (14, 10): 1, (14, 11): 1} where age at dest is {(10, 11): 2, (10, 12): 2, (11, 12): 2, (11, 13): 2, (12, 13): 2, (12, 14): 2, (13, 10): 2, (13, 14): 2, (14, 10): 2, (14, 11): 2}, age at UAV is {10: 2, 11: 2, 12: 2, 13: 1, 14: 1}
+mad_age_dest = {(10, 11): 0, (10, 12): 0, (11, 12): 0, (11, 13): 0, (12, 13): 0, (12, 14): 0, (13, 10): 1, (13, 14): 1, (14, 10): 1, (14, 11): 1}
+updated_users = [[14, 11], [14, 10]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 2, 11: 2, 12: 2, 13: 1, 14: 1} when the general UAV age was {10: 2, 11: 2, 12: 2, 13: 1, 14: 1}
+users sampled under UAV 0 are [12, 11]
+sampled_users = [12, 11]
+updated_users are [[14, 10], [14, 11]], sampled_users = [11, 12], mad_action = [([12, 11], [[14, 11], [14, 10]])], actual_mad_action = 224
+
+
+current episode = 0
+
+
+ step = 2, mad selection is 224, actual action is [(11, 12), ([14, 10], [14, 11])], updated_users = [[14, 10], [14, 11]], sampled_users = [11, 12]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+for pair [14, 10], chance_update_loss = 0.8 and eval_env.update_loss = -1 
+pair [14, 10] was selected to be updated. so pair [14, 10]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+for pair [14, 11], chance_update_loss = 0.57 and eval_env.update_loss = -1 
+pair [14, 11] was selected to be updated. so pair [14, 11]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+user  10  was not sampled
+ for user 11, chance_sample_loss = 0.91 and eval_env.sample_loss = -1 
+slot =  1  - user  11  period =  1  was selected to sample and sampled
+ for user 12, chance_sample_loss = 0.2 and eval_env.sample_loss = -1 
+slot =  1  - user  12  period =  1  was selected to sample and sampled
+user  13  was not sampled
+user  14  was not sampled
+time = 2, sample_time = {10: [], 11: [2], 12: [2], 13: [1], 14: [1]}
+tx_attempt_UAV has become {10: [0], 11: [1], 12: [1], 13: [1], 14: [1]} and tx_attempt_dest has become {(10, 11): [0], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+
+ step = 2 of episode 0 ended, UAV_age = {10: 3, 11: 1, 12: 1, 13: 2, 14: 2}, dest_age = {(10, 11): 3, (10, 12): 3, (11, 12): 3, (11, 13): 3, (12, 13): 3, (12, 14): 3, (13, 10): 3, (13, 14): 3, (14, 10): 2, (14, 11): 2} with sum = 28, tx_attempt_UAV = {10: [0], 11: [1], 12: [1], 13: [1], 14: [1]}, tx_attempt_dest = {(10, 11): [0], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+episode_wise_attempt_sample = 4
+episode_wise_success_sample = 4
+episode_wise_attempt_update = 2
+episode_wise_success_update = 2
+age difference of users at dest is {(10, 11): 0, (10, 12): 0, (11, 12): 2, (11, 13): 2, (12, 13): 2, (12, 14): 2, (13, 10): 1, (13, 14): 1, (14, 10): 0, (14, 11): 0} where age at dest is {(10, 11): 3, (10, 12): 3, (11, 12): 3, (11, 13): 3, (12, 13): 3, (12, 14): 3, (13, 10): 3, (13, 14): 3, (14, 10): 2, (14, 11): 2}, age at UAV is {10: 3, 11: 1, 12: 1, 13: 2, 14: 2}
+mad_age_dest = {(10, 11): 0, (10, 12): 0, (11, 12): 2, (11, 13): 2, (12, 13): 2, (12, 14): 2, (13, 10): 1, (13, 14): 1, (14, 10): 0, (14, 11): 0}
+updated_users = [[11, 12], [12, 14]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 3, 11: 1, 12: 1, 13: 2, 14: 2} when the general UAV age was {10: 3, 11: 1, 12: 1, 13: 2, 14: 2}
+users sampled under UAV 0 are [10, 13]
+sampled_users = [10, 13]
+updated_users are [[11, 12], [12, 14]], sampled_users = [10, 13], mad_action = [([10, 13], [[11, 12], [12, 14]])], actual_mad_action = 109
+
+
+current episode = 0
+
+
+ step = 3, mad selection is 109, actual action is [(10, 13), ([11, 12], [12, 14])], updated_users = [[11, 12], [12, 14]], sampled_users = [10, 13]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+for pair [11, 12], chance_update_loss = 0.47 and eval_env.update_loss = -1 
+pair [11, 12] was selected to be updated. so pair [11, 12]'s age at dest will become 11's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+for pair [12, 14], chance_update_loss = 0.51 and eval_env.update_loss = -1 
+pair [12, 14] was selected to be updated. so pair [12, 14]'s age at dest will become 12's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+ for user 10, chance_sample_loss = 0.4 and eval_env.sample_loss = -1 
+slot =  2  - user  10  period =  1  was selected to sample and sampled
+user  11  was not sampled
+user  12  was not sampled
+ for user 13, chance_sample_loss = 0.94 and eval_env.sample_loss = -1 
+slot =  2  - user  13  period =  1  was selected to sample and sampled
+user  14  was not sampled
+time = 3, sample_time = {10: [3], 11: [2], 12: [2], 13: [1, 3], 14: [1]}
+tx_attempt_UAV has become {10: [1], 11: [1], 12: [1], 13: [2], 14: [1]} and tx_attempt_dest has become {(10, 11): [0], (10, 12): [0], (11, 12): [1], (11, 13): [0], (12, 13): [0], (12, 14): [1], (13, 10): [0], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+
+ step = 3 of episode 0 ended, UAV_age = {10: 1, 11: 2, 12: 2, 13: 1, 14: 3}, dest_age = {(10, 11): 4, (10, 12): 4, (11, 12): 2, (11, 13): 4, (12, 13): 4, (12, 14): 2, (13, 10): 4, (13, 14): 4, (14, 10): 3, (14, 11): 3} with sum = 34, tx_attempt_UAV = {10: [1], 11: [1], 12: [1], 13: [2], 14: [1]}, tx_attempt_dest = {(10, 11): [0], (10, 12): [0], (11, 12): [1], (11, 13): [0], (12, 13): [0], (12, 14): [1], (13, 10): [0], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+episode_wise_attempt_sample = 6
+episode_wise_success_sample = 6
+episode_wise_attempt_update = 4
+episode_wise_success_update = 4
+age difference of users at dest is {(10, 11): 3, (10, 12): 3, (11, 12): 0, (11, 13): 2, (12, 13): 2, (12, 14): 0, (13, 10): 3, (13, 14): 3, (14, 10): 0, (14, 11): 0} where age at dest is {(10, 11): 4, (10, 12): 4, (11, 12): 2, (11, 13): 4, (12, 13): 4, (12, 14): 2, (13, 10): 4, (13, 14): 4, (14, 10): 3, (14, 11): 3}, age at UAV is {10: 1, 11: 2, 12: 2, 13: 1, 14: 3}
+mad_age_dest = {(10, 11): 3, (10, 12): 3, (11, 12): 0, (11, 13): 2, (12, 13): 2, (12, 14): 0, (13, 10): 3, (13, 14): 3, (14, 10): 0, (14, 11): 0}
+updated_users = [[10, 11], [13, 14]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 2, 12: 2, 13: 1, 14: 3} when the general UAV age was {10: 1, 11: 2, 12: 2, 13: 1, 14: 3}
+users sampled under UAV 0 are [14, 12]
+sampled_users = [14, 12]
+updated_users are [[10, 11], [13, 14]], sampled_users = [12, 14], mad_action = [([14, 12], [[10, 11], [13, 14]])], actual_mad_action = 366
+
+
+current episode = 0
+
+
+ step = 4, mad selection is 366, actual action is [(12, 14), ([10, 11], [13, 14])], updated_users = [[10, 11], [13, 14]], sampled_users = [12, 14]
+for pair [10, 11], chance_update_loss = 0.96 and eval_env.update_loss = -1 
+pair [10, 11] was selected to be updated. so pair [10, 11]'s age at dest will become 10's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+for pair [13, 14], chance_update_loss = 0.17 and eval_env.update_loss = -1 
+pair [13, 14] was selected to be updated. so pair [13, 14]'s age at dest will become 13's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+user  10  was not sampled
+user  11  was not sampled
+ for user 12, chance_sample_loss = 0.17 and eval_env.sample_loss = -1 
+slot =  3  - user  12  period =  1  was selected to sample and sampled
+user  13  was not sampled
+ for user 14, chance_sample_loss = 0.22 and eval_env.sample_loss = -1 
+slot =  3  - user  14  period =  1  was selected to sample and sampled
+time = 4, sample_time = {10: [3], 11: [2], 12: [2, 4], 13: [1, 3], 14: [1, 4]}
+tx_attempt_UAV has become {10: [1], 11: [1], 12: [2], 13: [2], 14: [2]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [0], (11, 12): [1], (11, 13): [0], (12, 13): [0], (12, 14): [1], (13, 10): [0], (13, 14): [1], (14, 10): [1], (14, 11): [1]}
+
+ step = 4 of episode 0 ended, UAV_age = {10: 2, 11: 3, 12: 1, 13: 2, 14: 1}, dest_age = {(10, 11): 2, (10, 12): 5, (11, 12): 3, (11, 13): 5, (12, 13): 5, (12, 14): 3, (13, 10): 5, (13, 14): 2, (14, 10): 4, (14, 11): 4} with sum = 38, tx_attempt_UAV = {10: [1], 11: [1], 12: [2], 13: [2], 14: [2]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [0], (11, 12): [1], (11, 13): [0], (12, 13): [0], (12, 14): [1], (13, 10): [0], (13, 14): [1], (14, 10): [1], (14, 11): [1]}
+episode_wise_attempt_sample = 8
+episode_wise_success_sample = 8
+episode_wise_attempt_update = 6
+episode_wise_success_update = 6
+age difference of users at dest is {(10, 11): 0, (10, 12): 3, (11, 12): 0, (11, 13): 2, (12, 13): 4, (12, 14): 2, (13, 10): 3, (13, 14): 0, (14, 10): 3, (14, 11): 3} where age at dest is {(10, 11): 2, (10, 12): 5, (11, 12): 3, (11, 13): 5, (12, 13): 5, (12, 14): 3, (13, 10): 5, (13, 14): 2, (14, 10): 4, (14, 11): 4}, age at UAV is {10: 2, 11: 3, 12: 1, 13: 2, 14: 1}
+mad_age_dest = {(10, 11): 0, (10, 12): 3, (11, 12): 0, (11, 13): 2, (12, 13): 4, (12, 14): 2, (13, 10): 3, (13, 14): 0, (14, 10): 3, (14, 11): 3}
+updated_users = [[12, 13], [13, 10]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 2, 11: 3, 12: 1, 13: 2, 14: 1} when the general UAV age was {10: 2, 11: 3, 12: 1, 13: 2, 14: 1}
+users sampled under UAV 0 are [11, 10]
+sampled_users = [11, 10]
+updated_users are [[12, 13], [13, 10]], sampled_users = [10, 11], mad_action = [([11, 10], [[12, 13], [13, 10]])], actual_mad_action = 31
+
+
+current episode = 0
+
+
+ step = 5, mad selection is 31, actual action is [(10, 11), ([12, 13], [13, 10])], updated_users = [[12, 13], [13, 10]], sampled_users = [10, 11]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+for pair [12, 13], chance_update_loss = 0.61 and eval_env.update_loss = -1 
+pair [12, 13] was selected to be updated. so pair [12, 13]'s age at dest will become 12's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [12, 14]  was not updated
+for pair [13, 10], chance_update_loss = 0.3 and eval_env.update_loss = -1 
+pair [13, 10] was selected to be updated. so pair [13, 10]'s age at dest will become 13's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=3
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+ for user 10, chance_sample_loss = 0.19 and eval_env.sample_loss = -1 
+slot =  4  - user  10  period =  1  was selected to sample and sampled
+ for user 11, chance_sample_loss = 0.66 and eval_env.sample_loss = -1 
+slot =  4  - user  11  period =  1  was selected to sample and sampled
+user  12  was not sampled
+user  13  was not sampled
+user  14  was not sampled
+time = 5, sample_time = {10: [3, 5], 11: [2, 5], 12: [2, 4], 13: [1, 3], 14: [1, 4]}
+tx_attempt_UAV has become {10: [2], 11: [2], 12: [2], 13: [2], 14: [2]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [0], (11, 12): [1], (11, 13): [0], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [1], (14, 11): [1]}
+
+ step = 5 of episode 0 ended, UAV_age = {10: 1, 11: 1, 12: 2, 13: 3, 14: 2}, dest_age = {(10, 11): 3, (10, 12): 6, (11, 12): 4, (11, 13): 6, (12, 13): 2, (12, 14): 4, (13, 10): 3, (13, 14): 3, (14, 10): 5, (14, 11): 5} with sum = 41, tx_attempt_UAV = {10: [2], 11: [2], 12: [2], 13: [2], 14: [2]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [0], (11, 12): [1], (11, 13): [0], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [1], (14, 11): [1]}
+episode_wise_attempt_sample = 10
+episode_wise_success_sample = 10
+episode_wise_attempt_update = 8
+episode_wise_success_update = 8
+age difference of users at dest is {(10, 11): 2, (10, 12): 5, (11, 12): 3, (11, 13): 5, (12, 13): 0, (12, 14): 2, (13, 10): 0, (13, 14): 0, (14, 10): 3, (14, 11): 3} where age at dest is {(10, 11): 3, (10, 12): 6, (11, 12): 4, (11, 13): 6, (12, 13): 2, (12, 14): 4, (13, 10): 3, (13, 14): 3, (14, 10): 5, (14, 11): 5}, age at UAV is {10: 1, 11: 1, 12: 2, 13: 3, 14: 2}
+mad_age_dest = {(10, 11): 2, (10, 12): 5, (11, 12): 3, (11, 13): 5, (12, 13): 0, (12, 14): 2, (13, 10): 0, (13, 14): 0, (14, 10): 3, (14, 11): 3}
+updated_users = [[10, 12], [11, 13]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 1, 12: 2, 13: 3, 14: 2} when the general UAV age was {10: 1, 11: 1, 12: 2, 13: 3, 14: 2}
+users sampled under UAV 0 are [13, 12]
+sampled_users = [13, 12]
+updated_users are [[10, 12], [11, 13]], sampled_users = [12, 13], mad_action = [([13, 12], [[10, 12], [11, 13]])], actual_mad_action = 325
+
+
+current episode = 0
+
+
+ step = 6, mad selection is 325, actual action is [(12, 13), ([10, 12], [11, 13])], updated_users = [[10, 12], [11, 13]], sampled_users = [12, 13]
+pair  [10, 11]  was not updated
+for pair [10, 12], chance_update_loss = 0.22 and eval_env.update_loss = -1 
+pair [10, 12] was selected to be updated. so pair [10, 12]'s age at dest will become 10's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [11, 12]  was not updated
+for pair [11, 13], chance_update_loss = 0.83 and eval_env.update_loss = -1 
+pair [11, 13] was selected to be updated. so pair [11, 13]'s age at dest will become 11's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+user  10  was not sampled
+user  11  was not sampled
+ for user 12, chance_sample_loss = 0.27 and eval_env.sample_loss = -1 
+slot =  5  - user  12  period =  1  was selected to sample and sampled
+ for user 13, chance_sample_loss = 0.17 and eval_env.sample_loss = -1 
+slot =  5  - user  13  period =  1  was selected to sample and sampled
+user  14  was not sampled
+time = 6, sample_time = {10: [3, 5], 11: [2, 5], 12: [2, 4, 6], 13: [1, 3, 6], 14: [1, 4]}
+tx_attempt_UAV has become {10: [2], 11: [2], 12: [3], 13: [3], 14: [2]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [1], (14, 11): [1]}
+
+ step = 6 of episode 0 ended, UAV_age = {10: 2, 11: 2, 12: 1, 13: 1, 14: 3}, dest_age = {(10, 11): 4, (10, 12): 2, (11, 12): 5, (11, 13): 2, (12, 13): 3, (12, 14): 5, (13, 10): 4, (13, 14): 4, (14, 10): 6, (14, 11): 6} with sum = 41, tx_attempt_UAV = {10: [2], 11: [2], 12: [3], 13: [3], 14: [2]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [1], (14, 11): [1]}
+episode_wise_attempt_sample = 12
+episode_wise_success_sample = 12
+episode_wise_attempt_update = 10
+episode_wise_success_update = 10
+age difference of users at dest is {(10, 11): 2, (10, 12): 0, (11, 12): 3, (11, 13): 0, (12, 13): 2, (12, 14): 4, (13, 10): 3, (13, 14): 3, (14, 10): 3, (14, 11): 3} where age at dest is {(10, 11): 4, (10, 12): 2, (11, 12): 5, (11, 13): 2, (12, 13): 3, (12, 14): 5, (13, 10): 4, (13, 14): 4, (14, 10): 6, (14, 11): 6}, age at UAV is {10: 2, 11: 2, 12: 1, 13: 1, 14: 3}
+mad_age_dest = {(10, 11): 2, (10, 12): 0, (11, 12): 3, (11, 13): 0, (12, 13): 2, (12, 14): 4, (13, 10): 3, (13, 14): 3, (14, 10): 3, (14, 11): 3}
+updated_users = [[12, 14], [13, 10]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 2, 11: 2, 12: 1, 13: 1, 14: 3} when the general UAV age was {10: 2, 11: 2, 12: 1, 13: 1, 14: 3}
+users sampled under UAV 0 are [14, 10]
+sampled_users = [14, 10]
+updated_users are [[12, 14], [13, 10]], sampled_users = [10, 14], mad_action = [([14, 10], [[12, 14], [13, 10]])], actual_mad_action = 170
+
+
+current episode = 0
+
+
+ step = 7, mad selection is 170, actual action is [(10, 14), ([12, 14], [13, 10])], updated_users = [[12, 14], [13, 10]], sampled_users = [10, 14]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+for pair [12, 14], chance_update_loss = 0.09 and eval_env.update_loss = -1 
+pair [12, 14] was selected to be updated. so pair [12, 14]'s age at dest will become 12's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+for pair [13, 10], chance_update_loss = 0.47 and eval_env.update_loss = -1 
+pair [13, 10] was selected to be updated. so pair [13, 10]'s age at dest will become 13's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+ for user 10, chance_sample_loss = 0.19 and eval_env.sample_loss = -1 
+slot =  6  - user  10  period =  1  was selected to sample and sampled
+user  11  was not sampled
+user  12  was not sampled
+user  13  was not sampled
+ for user 14, chance_sample_loss = 0.4 and eval_env.sample_loss = -1 
+slot =  6  - user  14  period =  1  was selected to sample and sampled
+time = 7, sample_time = {10: [3, 5, 7], 11: [2, 5], 12: [2, 4, 6], 13: [1, 3, 6], 14: [1, 4, 7]}
+tx_attempt_UAV has become {10: [3], 11: [2], 12: [3], 13: [3], 14: [3]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [2], (13, 10): [2], (13, 14): [1], (14, 10): [1], (14, 11): [1]}
+
+ step = 7 of episode 0 ended, UAV_age = {10: 1, 11: 3, 12: 2, 13: 2, 14: 1}, dest_age = {(10, 11): 5, (10, 12): 3, (11, 12): 6, (11, 13): 3, (12, 13): 4, (12, 14): 2, (13, 10): 2, (13, 14): 5, (14, 10): 7, (14, 11): 7} with sum = 44, tx_attempt_UAV = {10: [3], 11: [2], 12: [3], 13: [3], 14: [3]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [2], (13, 10): [2], (13, 14): [1], (14, 10): [1], (14, 11): [1]}
+episode_wise_attempt_sample = 14
+episode_wise_success_sample = 14
+episode_wise_attempt_update = 12
+episode_wise_success_update = 12
+age difference of users at dest is {(10, 11): 4, (10, 12): 2, (11, 12): 3, (11, 13): 0, (12, 13): 2, (12, 14): 0, (13, 10): 0, (13, 14): 3, (14, 10): 6, (14, 11): 6} where age at dest is {(10, 11): 5, (10, 12): 3, (11, 12): 6, (11, 13): 3, (12, 13): 4, (12, 14): 2, (13, 10): 2, (13, 14): 5, (14, 10): 7, (14, 11): 7}, age at UAV is {10: 1, 11: 3, 12: 2, 13: 2, 14: 1}
+mad_age_dest = {(10, 11): 4, (10, 12): 2, (11, 12): 3, (11, 13): 0, (12, 13): 2, (12, 14): 0, (13, 10): 0, (13, 14): 3, (14, 10): 6, (14, 11): 6}
+updated_users = [[14, 10], [14, 11]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 3, 12: 2, 13: 2, 14: 1} when the general UAV age was {10: 1, 11: 3, 12: 2, 13: 2, 14: 1}
+users sampled under UAV 0 are [11, 13]
+sampled_users = [11, 13]
+updated_users are [[14, 10], [14, 11]], sampled_users = [11, 13], mad_action = [([11, 13], [[14, 10], [14, 11]])], actual_mad_action = 269
+
+
+current episode = 0
+
+
+ step = 8, mad selection is 269, actual action is [(11, 13), ([14, 10], [14, 11])], updated_users = [[14, 10], [14, 11]], sampled_users = [11, 13]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+for pair [14, 10], chance_update_loss = 0.98 and eval_env.update_loss = -1 
+pair [14, 10] was selected to be updated. so pair [14, 10]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+for pair [14, 11], chance_update_loss = 0.15 and eval_env.update_loss = -1 
+pair [14, 11] was selected to be updated. so pair [14, 11]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+user  10  was not sampled
+ for user 11, chance_sample_loss = 0.21 and eval_env.sample_loss = -1 
+slot =  7  - user  11  period =  1  was selected to sample and sampled
+user  12  was not sampled
+ for user 13, chance_sample_loss = 0.89 and eval_env.sample_loss = -1 
+slot =  7  - user  13  period =  1  was selected to sample and sampled
+user  14  was not sampled
+time = 8, sample_time = {10: [3, 5, 7], 11: [2, 5, 8], 12: [2, 4, 6], 13: [1, 3, 6, 8], 14: [1, 4, 7]}
+tx_attempt_UAV has become {10: [3], 11: [3], 12: [3], 13: [4], 14: [3]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [2], (13, 10): [2], (13, 14): [1], (14, 10): [2], (14, 11): [2]}
+
+ step = 8 of episode 0 ended, UAV_age = {10: 2, 11: 1, 12: 3, 13: 1, 14: 2}, dest_age = {(10, 11): 6, (10, 12): 4, (11, 12): 7, (11, 13): 4, (12, 13): 5, (12, 14): 3, (13, 10): 3, (13, 14): 6, (14, 10): 2, (14, 11): 2} with sum = 42, tx_attempt_UAV = {10: [3], 11: [3], 12: [3], 13: [4], 14: [3]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [2], (13, 10): [2], (13, 14): [1], (14, 10): [2], (14, 11): [2]}
+episode_wise_attempt_sample = 16
+episode_wise_success_sample = 16
+episode_wise_attempt_update = 14
+episode_wise_success_update = 14
+age difference of users at dest is {(10, 11): 4, (10, 12): 2, (11, 12): 6, (11, 13): 3, (12, 13): 2, (12, 14): 0, (13, 10): 2, (13, 14): 5, (14, 10): 0, (14, 11): 0} where age at dest is {(10, 11): 6, (10, 12): 4, (11, 12): 7, (11, 13): 4, (12, 13): 5, (12, 14): 3, (13, 10): 3, (13, 14): 6, (14, 10): 2, (14, 11): 2}, age at UAV is {10: 2, 11: 1, 12: 3, 13: 1, 14: 2}
+mad_age_dest = {(10, 11): 4, (10, 12): 2, (11, 12): 6, (11, 13): 3, (12, 13): 2, (12, 14): 0, (13, 10): 2, (13, 14): 5, (14, 10): 0, (14, 11): 0}
+updated_users = [[11, 12], [13, 14]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 2, 11: 1, 12: 3, 13: 1, 14: 2} when the general UAV age was {10: 2, 11: 1, 12: 3, 13: 1, 14: 2}
+users sampled under UAV 0 are [12, 14]
+sampled_users = [12, 14]
+updated_users are [[11, 12], [13, 14]], sampled_users = [12, 14], mad_action = [([12, 14], [[11, 12], [13, 14]])], actual_mad_action = 381
+
+
+current episode = 0
+
+
+ step = 9, mad selection is 381, actual action is [(12, 14), ([11, 12], [13, 14])], updated_users = [[11, 12], [13, 14]], sampled_users = [12, 14]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+for pair [11, 12], chance_update_loss = 0.17 and eval_env.update_loss = -1 
+pair [11, 12] was selected to be updated. so pair [11, 12]'s age at dest will become 11's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+for pair [13, 14], chance_update_loss = 0.49 and eval_env.update_loss = -1 
+pair [13, 14] was selected to be updated. so pair [13, 14]'s age at dest will become 13's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+user  10  was not sampled
+user  11  was not sampled
+ for user 12, chance_sample_loss = 0.56 and eval_env.sample_loss = -1 
+slot =  8  - user  12  period =  1  was selected to sample and sampled
+user  13  was not sampled
+ for user 14, chance_sample_loss = 0.44 and eval_env.sample_loss = -1 
+slot =  8  - user  14  period =  1  was selected to sample and sampled
+time = 9, sample_time = {10: [3, 5, 7], 11: [2, 5, 8], 12: [2, 4, 6, 9], 13: [1, 3, 6, 8], 14: [1, 4, 7, 9]}
+tx_attempt_UAV has become {10: [3], 11: [3], 12: [4], 13: [4], 14: [4]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [1], (11, 12): [2], (11, 13): [1], (12, 13): [1], (12, 14): [2], (13, 10): [2], (13, 14): [2], (14, 10): [2], (14, 11): [2]}
+
+ step = 9 of episode 0 ended, UAV_age = {10: 3, 11: 2, 12: 1, 13: 2, 14: 1}, dest_age = {(10, 11): 7, (10, 12): 5, (11, 12): 2, (11, 13): 5, (12, 13): 6, (12, 14): 4, (13, 10): 4, (13, 14): 2, (14, 10): 3, (14, 11): 3} with sum = 41, tx_attempt_UAV = {10: [3], 11: [3], 12: [4], 13: [4], 14: [4]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [1], (11, 12): [2], (11, 13): [1], (12, 13): [1], (12, 14): [2], (13, 10): [2], (13, 14): [2], (14, 10): [2], (14, 11): [2]}
+episode_wise_attempt_sample = 18
+episode_wise_success_sample = 18
+episode_wise_attempt_update = 16
+episode_wise_success_update = 16
+age difference of users at dest is {(10, 11): 4, (10, 12): 2, (11, 12): 0, (11, 13): 3, (12, 13): 5, (12, 14): 3, (13, 10): 2, (13, 14): 0, (14, 10): 2, (14, 11): 2} where age at dest is {(10, 11): 7, (10, 12): 5, (11, 12): 2, (11, 13): 5, (12, 13): 6, (12, 14): 4, (13, 10): 4, (13, 14): 2, (14, 10): 3, (14, 11): 3}, age at UAV is {10: 3, 11: 2, 12: 1, 13: 2, 14: 1}
+mad_age_dest = {(10, 11): 4, (10, 12): 2, (11, 12): 0, (11, 13): 3, (12, 13): 5, (12, 14): 3, (13, 10): 2, (13, 14): 0, (14, 10): 2, (14, 11): 2}
+updated_users = [[12, 13], [10, 11]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 3, 11: 2, 12: 1, 13: 2, 14: 1} when the general UAV age was {10: 3, 11: 2, 12: 1, 13: 2, 14: 1}
+users sampled under UAV 0 are [10, 13]
+sampled_users = [10, 13]
+updated_users are [[10, 11], [12, 13]], sampled_users = [10, 13], mad_action = [([10, 13], [[12, 13], [10, 11]])], actual_mad_action = 93
+
+
+current episode = 0
+
+
+ step = 10, mad selection is 93, actual action is [(10, 13), ([10, 11], [12, 13])], updated_users = [[10, 11], [12, 13]], sampled_users = [10, 13]
+for pair [10, 11], chance_update_loss = 0.81 and eval_env.update_loss = -1 
+pair [10, 11] was selected to be updated. so pair [10, 11]'s age at dest will become 10's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=4
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+for pair [12, 13], chance_update_loss = 0.01 and eval_env.update_loss = -1 
+pair [12, 13] was selected to be updated. so pair [12, 13]'s age at dest will become 12's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+ for user 10, chance_sample_loss = 0.77 and eval_env.sample_loss = -1 
+slot =  9  - user  10  period =  1  was selected to sample and sampled
+user  11  was not sampled
+user  12  was not sampled
+ for user 13, chance_sample_loss = 0.79 and eval_env.sample_loss = -1 
+slot =  9  - user  13  period =  1  was selected to sample and sampled
+user  14  was not sampled
+time = 10, sample_time = {10: [3, 5, 7, 10], 11: [2, 5, 8], 12: [2, 4, 6, 9], 13: [1, 3, 6, 8, 10], 14: [1, 4, 7, 9]}
+tx_attempt_UAV has become {10: [4], 11: [3], 12: [4], 13: [5], 14: [4]} and tx_attempt_dest has become {(10, 11): [2], (10, 12): [1], (11, 12): [2], (11, 13): [1], (12, 13): [2], (12, 14): [2], (13, 10): [2], (13, 14): [2], (14, 10): [2], (14, 11): [2]}
+
+ step = 10 of episode 0 ended, UAV_age = {10: 1, 11: 3, 12: 2, 13: 1, 14: 2}, dest_age = {(10, 11): 4, (10, 12): 6, (11, 12): 3, (11, 13): 6, (12, 13): 2, (12, 14): 5, (13, 10): 5, (13, 14): 3, (14, 10): 4, (14, 11): 4} with sum = 42, tx_attempt_UAV = {10: [4], 11: [3], 12: [4], 13: [5], 14: [4]}, tx_attempt_dest = {(10, 11): [2], (10, 12): [1], (11, 12): [2], (11, 13): [1], (12, 13): [2], (12, 14): [2], (13, 10): [2], (13, 14): [2], (14, 10): [2], (14, 11): [2]}
+episode_wise_attempt_sample = 20
+episode_wise_success_sample = 20
+episode_wise_attempt_update = 18
+episode_wise_success_update = 18
+age_dist_UAV = {10: [1], 11: [3], 12: [2], 13: [1], 14: [2]}, age_dist_dest = {(10, 11): [4], (10, 12): [6], (11, 12): [3], (11, 13): [6], (12, 13): [2], (12, 14): [5], (13, 10): [5], (13, 14): [3], (14, 10): [4], (14, 11): [4]}
+results for step 10 of episode 0
+attempt_sample = [20]
+success_sample = [20]
+attempt_update = [18]
+success_update = [18]
+
+*****************************************************
+
+
+
+tx_rx_pairs = [[10, 11], [10, 12], [11, 12], [11, 13], [12, 13], [12, 14], [13, 10], [13, 14], [14, 10], [14, 11]] with length 10 and tx_users = [10, 11, 12, 13, 14] with length 5
+user list = [10, 11, 12, 13, 14]
+UAV list  = [0]
+self.n_users = 5, self.n_UAVs = 1, self.act_coverage = {0: [10, 11, 12, 13, 14]}, self.update_loss = {(10, 11): -1, (10, 12): -1, (11, 12): -1, (11, 13): -1, (12, 13): -1, (12, 14): -1, (13, 10): -1, (13, 14): -1, (14, 10): -1, (14, 11): -1}, self.sample_loss = {10: -1, 11: -1, 12: -1, 13: -1, 14: -1}, self.UAV_list = [0], self.user_list = [10, 11, 12, 13, 14]
+
+eval_net has a action_space of size  (450, 2, 2)
+
+eval_net started and age_dist_UAV = {10: [], 11: [], 12: [], 13: [], 14: []}, age_dist_dest = {(10, 11): [], (10, 12): [], (11, 12): [], (11, 13): [], (12, 13): [], (12, 14): [], (13, 10): [], (13, 14): [], (14, 10): [], (14, 11): []}, tx_attempt_dest = {(10, 11): [], (10, 12): [], (11, 12): [], (11, 13): [], (12, 13): [], (12, 14): [], (13, 10): [], (13, 14): [], (14, 10): [], (14, 11): []}, tx_attempt_UAV = {10: [], 11: [], 12: [], 13: [], 14: []}
+
+
+eval_net after reset, episode 1 begins with self._state = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1] with shape (16,) when CSI_as_state = False and sample_error_in_CSI = False
+
+age difference of users at dest is {(10, 11): 0, (10, 12): 0, (11, 12): 0, (11, 13): 0, (12, 13): 0, (12, 14): 0, (13, 10): 0, (13, 14): 0, (14, 10): 0, (14, 11): 0} where age at dest is {(10, 11): 1, (10, 12): 1, (11, 12): 1, (11, 13): 1, (12, 13): 1, (12, 14): 1, (13, 10): 1, (13, 14): 1, (14, 10): 1, (14, 11): 1}, age at UAV is {10: 1, 11: 1, 12: 1, 13: 1, 14: 1}
+mad_age_dest = {(10, 11): 0, (10, 12): 0, (11, 12): 0, (11, 13): 0, (12, 13): 0, (12, 14): 0, (13, 10): 0, (13, 14): 0, (14, 10): 0, (14, 11): 0}
+updated_users = [[14, 10], [10, 11]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 1, 12: 1, 13: 1, 14: 1} when the general UAV age was {10: 1, 11: 1, 12: 1, 13: 1, 14: 1}
+users sampled under UAV 0 are [14, 13]
+sampled_users = [14, 13]
+updated_users are [[10, 11], [14, 10]], sampled_users = [13, 14], mad_action = [([14, 13], [[14, 10], [10, 11]])], actual_mad_action = 412
+
+
+current episode = 1
+
+
+ step = 1, mad selection is 412, actual action is [(13, 14), ([10, 11], [14, 10])], updated_users = [[10, 11], [14, 10]], sampled_users = [13, 14]
+user  10  was not sampled
+user  11  was not sampled
+user  12  was not sampled
+ for user 13, chance_sample_loss = 0.36 and eval_env.sample_loss = -1 
+slot =  0  - user  13  period =  1  was selected to sample and sampled
+ for user 14, chance_sample_loss = 0.17 and eval_env.sample_loss = -1 
+slot =  0  - user  14  period =  1  was selected to sample and sampled
+time = 1, sample_time = {10: [3, 5, 7, 10], 11: [2, 5, 8], 12: [2, 4, 6, 9], 13: [1, 3, 6, 8, 10, 1], 14: [1, 4, 7, 9, 1]}
+tx_attempt_UAV has become {10: [0], 11: [0], 12: [0], 13: [1], 14: [1]} and tx_attempt_dest has become {(10, 11): [0], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [0], (14, 11): [0]}
+
+ step = 1 of episode 1 ended, UAV_age = {10: 2, 11: 2, 12: 2, 13: 1, 14: 1}, dest_age = {(10, 11): 2, (10, 12): 2, (11, 12): 2, (11, 13): 2, (12, 13): 2, (12, 14): 2, (13, 10): 2, (13, 14): 2, (14, 10): 2, (14, 11): 2} with sum = 20, tx_attempt_UAV = {10: [0], 11: [0], 12: [0], 13: [1], 14: [1]}, tx_attempt_dest = {(10, 11): [0], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [0], (14, 11): [0]}
+episode_wise_attempt_sample = 2
+episode_wise_success_sample = 2
+episode_wise_attempt_update = 0
+episode_wise_success_update = 0
+age difference of users at dest is {(10, 11): 0, (10, 12): 0, (11, 12): 0, (11, 13): 0, (12, 13): 0, (12, 14): 0, (13, 10): 1, (13, 14): 1, (14, 10): 1, (14, 11): 1} where age at dest is {(10, 11): 2, (10, 12): 2, (11, 12): 2, (11, 13): 2, (12, 13): 2, (12, 14): 2, (13, 10): 2, (13, 14): 2, (14, 10): 2, (14, 11): 2}, age at UAV is {10: 2, 11: 2, 12: 2, 13: 1, 14: 1}
+mad_age_dest = {(10, 11): 0, (10, 12): 0, (11, 12): 0, (11, 13): 0, (12, 13): 0, (12, 14): 0, (13, 10): 1, (13, 14): 1, (14, 10): 1, (14, 11): 1}
+updated_users = [[14, 11], [13, 14]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 2, 11: 2, 12: 2, 13: 1, 14: 1} when the general UAV age was {10: 2, 11: 2, 12: 2, 13: 1, 14: 1}
+users sampled under UAV 0 are [11, 12]
+sampled_users = [11, 12]
+updated_users are [[13, 14], [14, 11]], sampled_users = [11, 12], mad_action = [([11, 12], [[14, 11], [13, 14]])], actual_mad_action = 223
+
+
+current episode = 1
+
+
+ step = 2, mad selection is 223, actual action is [(11, 12), ([13, 14], [14, 11])], updated_users = [[13, 14], [14, 11]], sampled_users = [11, 12]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+for pair [13, 14], chance_update_loss = 0.55 and eval_env.update_loss = -1 
+pair [13, 14] was selected to be updated. so pair [13, 14]'s age at dest will become 13's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [14, 10]  was not updated
+for pair [14, 11], chance_update_loss = 0.65 and eval_env.update_loss = -1 
+pair [14, 11] was selected to be updated. so pair [14, 11]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+user  10  was not sampled
+ for user 11, chance_sample_loss = 0.66 and eval_env.sample_loss = -1 
+slot =  1  - user  11  period =  1  was selected to sample and sampled
+ for user 12, chance_sample_loss = 0.09 and eval_env.sample_loss = -1 
+slot =  1  - user  12  period =  1  was selected to sample and sampled
+user  13  was not sampled
+user  14  was not sampled
+time = 2, sample_time = {10: [3, 5, 7, 10], 11: [2, 5, 8, 2], 12: [2, 4, 6, 9, 2], 13: [1, 3, 6, 8, 10, 1], 14: [1, 4, 7, 9, 1]}
+tx_attempt_UAV has become {10: [0], 11: [1], 12: [1], 13: [1], 14: [1]} and tx_attempt_dest has become {(10, 11): [0], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [1], (14, 10): [0], (14, 11): [1]}
+
+ step = 2 of episode 1 ended, UAV_age = {10: 3, 11: 1, 12: 1, 13: 2, 14: 2}, dest_age = {(10, 11): 3, (10, 12): 3, (11, 12): 3, (11, 13): 3, (12, 13): 3, (12, 14): 3, (13, 10): 3, (13, 14): 2, (14, 10): 3, (14, 11): 2} with sum = 28, tx_attempt_UAV = {10: [0], 11: [1], 12: [1], 13: [1], 14: [1]}, tx_attempt_dest = {(10, 11): [0], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [1], (14, 10): [0], (14, 11): [1]}
+episode_wise_attempt_sample = 4
+episode_wise_success_sample = 4
+episode_wise_attempt_update = 2
+episode_wise_success_update = 2
+age difference of users at dest is {(10, 11): 0, (10, 12): 0, (11, 12): 2, (11, 13): 2, (12, 13): 2, (12, 14): 2, (13, 10): 1, (13, 14): 0, (14, 10): 1, (14, 11): 0} where age at dest is {(10, 11): 3, (10, 12): 3, (11, 12): 3, (11, 13): 3, (12, 13): 3, (12, 14): 3, (13, 10): 3, (13, 14): 2, (14, 10): 3, (14, 11): 2}, age at UAV is {10: 3, 11: 1, 12: 1, 13: 2, 14: 2}
+mad_age_dest = {(10, 11): 0, (10, 12): 0, (11, 12): 2, (11, 13): 2, (12, 13): 2, (12, 14): 2, (13, 10): 1, (13, 14): 0, (14, 10): 1, (14, 11): 0}
+updated_users = [[12, 13], [11, 12]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 3, 11: 1, 12: 1, 13: 2, 14: 2} when the general UAV age was {10: 3, 11: 1, 12: 1, 13: 2, 14: 2}
+users sampled under UAV 0 are [10, 14]
+sampled_users = [10, 14]
+updated_users are [[11, 12], [12, 13]], sampled_users = [10, 14], mad_action = [([10, 14], [[12, 13], [11, 12]])], actual_mad_action = 153
+
+
+current episode = 1
+
+
+ step = 3, mad selection is 153, actual action is [(10, 14), ([11, 12], [12, 13])], updated_users = [[11, 12], [12, 13]], sampled_users = [10, 14]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+for pair [11, 12], chance_update_loss = 0.84 and eval_env.update_loss = -1 
+pair [11, 12] was selected to be updated. so pair [11, 12]'s age at dest will become 11's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [11, 13]  was not updated
+for pair [12, 13], chance_update_loss = 0.75 and eval_env.update_loss = -1 
+pair [12, 13] was selected to be updated. so pair [12, 13]'s age at dest will become 12's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+ for user 10, chance_sample_loss = 0.88 and eval_env.sample_loss = -1 
+slot =  2  - user  10  period =  1  was selected to sample and sampled
+user  11  was not sampled
+user  12  was not sampled
+user  13  was not sampled
+ for user 14, chance_sample_loss = 0.02 and eval_env.sample_loss = -1 
+slot =  2  - user  14  period =  1  was selected to sample and sampled
+time = 3, sample_time = {10: [3, 5, 7, 10, 3], 11: [2, 5, 8, 2], 12: [2, 4, 6, 9, 2], 13: [1, 3, 6, 8, 10, 1], 14: [1, 4, 7, 9, 1, 3]}
+tx_attempt_UAV has become {10: [1], 11: [1], 12: [1], 13: [1], 14: [2]} and tx_attempt_dest has become {(10, 11): [0], (10, 12): [0], (11, 12): [1], (11, 13): [0], (12, 13): [1], (12, 14): [0], (13, 10): [0], (13, 14): [1], (14, 10): [0], (14, 11): [1]}
+
+ step = 3 of episode 1 ended, UAV_age = {10: 1, 11: 2, 12: 2, 13: 3, 14: 1}, dest_age = {(10, 11): 4, (10, 12): 4, (11, 12): 2, (11, 13): 4, (12, 13): 2, (12, 14): 4, (13, 10): 4, (13, 14): 3, (14, 10): 4, (14, 11): 3} with sum = 34, tx_attempt_UAV = {10: [1], 11: [1], 12: [1], 13: [1], 14: [2]}, tx_attempt_dest = {(10, 11): [0], (10, 12): [0], (11, 12): [1], (11, 13): [0], (12, 13): [1], (12, 14): [0], (13, 10): [0], (13, 14): [1], (14, 10): [0], (14, 11): [1]}
+episode_wise_attempt_sample = 6
+episode_wise_success_sample = 6
+episode_wise_attempt_update = 4
+episode_wise_success_update = 4
+age difference of users at dest is {(10, 11): 3, (10, 12): 3, (11, 12): 0, (11, 13): 2, (12, 13): 0, (12, 14): 2, (13, 10): 1, (13, 14): 0, (14, 10): 3, (14, 11): 2} where age at dest is {(10, 11): 4, (10, 12): 4, (11, 12): 2, (11, 13): 4, (12, 13): 2, (12, 14): 4, (13, 10): 4, (13, 14): 3, (14, 10): 4, (14, 11): 3}, age at UAV is {10: 1, 11: 2, 12: 2, 13: 3, 14: 1}
+mad_age_dest = {(10, 11): 3, (10, 12): 3, (11, 12): 0, (11, 13): 2, (12, 13): 0, (12, 14): 2, (13, 10): 1, (13, 14): 0, (14, 10): 3, (14, 11): 2}
+updated_users = [[10, 12], [10, 11]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 2, 12: 2, 13: 3, 14: 1} when the general UAV age was {10: 1, 11: 2, 12: 2, 13: 3, 14: 1}
+users sampled under UAV 0 are [13, 12]
+sampled_users = [13, 12]
+updated_users are [[10, 11], [10, 12]], sampled_users = [12, 13], mad_action = [([13, 12], [[10, 12], [10, 11]])], actual_mad_action = 315
+
+
+current episode = 1
+
+
+ step = 4, mad selection is 315, actual action is [(12, 13), ([10, 11], [10, 12])], updated_users = [[10, 11], [10, 12]], sampled_users = [12, 13]
+for pair [10, 11], chance_update_loss = 0.76 and eval_env.update_loss = -1 
+pair [10, 11] was selected to be updated. so pair [10, 11]'s age at dest will become 10's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+for pair [10, 12], chance_update_loss = 0.43 and eval_env.update_loss = -1 
+pair [10, 12] was selected to be updated. so pair [10, 12]'s age at dest will become 10's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+user  10  was not sampled
+user  11  was not sampled
+ for user 12, chance_sample_loss = 0.86 and eval_env.sample_loss = -1 
+slot =  3  - user  12  period =  1  was selected to sample and sampled
+ for user 13, chance_sample_loss = 0.41 and eval_env.sample_loss = -1 
+slot =  3  - user  13  period =  1  was selected to sample and sampled
+user  14  was not sampled
+time = 4, sample_time = {10: [3, 5, 7, 10, 3], 11: [2, 5, 8, 2], 12: [2, 4, 6, 9, 2, 4], 13: [1, 3, 6, 8, 10, 1, 4], 14: [1, 4, 7, 9, 1, 3]}
+tx_attempt_UAV has become {10: [1], 11: [1], 12: [2], 13: [2], 14: [2]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [0], (12, 13): [1], (12, 14): [0], (13, 10): [0], (13, 14): [1], (14, 10): [0], (14, 11): [1]}
+
+ step = 4 of episode 1 ended, UAV_age = {10: 2, 11: 3, 12: 1, 13: 1, 14: 2}, dest_age = {(10, 11): 2, (10, 12): 2, (11, 12): 3, (11, 13): 5, (12, 13): 3, (12, 14): 5, (13, 10): 5, (13, 14): 4, (14, 10): 5, (14, 11): 4} with sum = 38, tx_attempt_UAV = {10: [1], 11: [1], 12: [2], 13: [2], 14: [2]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [0], (12, 13): [1], (12, 14): [0], (13, 10): [0], (13, 14): [1], (14, 10): [0], (14, 11): [1]}
+episode_wise_attempt_sample = 8
+episode_wise_success_sample = 8
+episode_wise_attempt_update = 6
+episode_wise_success_update = 6
+age difference of users at dest is {(10, 11): 0, (10, 12): 0, (11, 12): 0, (11, 13): 2, (12, 13): 2, (12, 14): 4, (13, 10): 4, (13, 14): 3, (14, 10): 3, (14, 11): 2} where age at dest is {(10, 11): 2, (10, 12): 2, (11, 12): 3, (11, 13): 5, (12, 13): 3, (12, 14): 5, (13, 10): 5, (13, 14): 4, (14, 10): 5, (14, 11): 4}, age at UAV is {10: 2, 11: 3, 12: 1, 13: 1, 14: 2}
+mad_age_dest = {(10, 11): 0, (10, 12): 0, (11, 12): 0, (11, 13): 2, (12, 13): 2, (12, 14): 4, (13, 10): 4, (13, 14): 3, (14, 10): 3, (14, 11): 2}
+updated_users = [[12, 14], [13, 10]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 2, 11: 3, 12: 1, 13: 1, 14: 2} when the general UAV age was {10: 2, 11: 3, 12: 1, 13: 1, 14: 2}
+users sampled under UAV 0 are [11, 10]
+sampled_users = [11, 10]
+updated_users are [[12, 14], [13, 10]], sampled_users = [10, 11], mad_action = [([11, 10], [[12, 14], [13, 10]])], actual_mad_action = 35
+
+
+current episode = 1
+
+
+ step = 5, mad selection is 35, actual action is [(10, 11), ([12, 14], [13, 10])], updated_users = [[12, 14], [13, 10]], sampled_users = [10, 11]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+for pair [12, 14], chance_update_loss = 0.39 and eval_env.update_loss = -1 
+pair [12, 14] was selected to be updated. so pair [12, 14]'s age at dest will become 12's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+for pair [13, 10], chance_update_loss = 0.12 and eval_env.update_loss = -1 
+pair [13, 10] was selected to be updated. so pair [13, 10]'s age at dest will become 13's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+ for user 10, chance_sample_loss = 0.58 and eval_env.sample_loss = -1 
+slot =  4  - user  10  period =  1  was selected to sample and sampled
+ for user 11, chance_sample_loss = 0.9 and eval_env.sample_loss = -1 
+slot =  4  - user  11  period =  1  was selected to sample and sampled
+user  12  was not sampled
+user  13  was not sampled
+user  14  was not sampled
+time = 5, sample_time = {10: [3, 5, 7, 10, 3, 5], 11: [2, 5, 8, 2, 5], 12: [2, 4, 6, 9, 2, 4], 13: [1, 3, 6, 8, 10, 1, 4], 14: [1, 4, 7, 9, 1, 3]}
+tx_attempt_UAV has become {10: [2], 11: [2], 12: [2], 13: [2], 14: [2]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [0], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [0], (14, 11): [1]}
+
+ step = 5 of episode 1 ended, UAV_age = {10: 1, 11: 1, 12: 2, 13: 2, 14: 3}, dest_age = {(10, 11): 3, (10, 12): 3, (11, 12): 4, (11, 13): 6, (12, 13): 4, (12, 14): 2, (13, 10): 2, (13, 14): 5, (14, 10): 6, (14, 11): 5} with sum = 40, tx_attempt_UAV = {10: [2], 11: [2], 12: [2], 13: [2], 14: [2]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [0], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [0], (14, 11): [1]}
+episode_wise_attempt_sample = 10
+episode_wise_success_sample = 10
+episode_wise_attempt_update = 8
+episode_wise_success_update = 8
+age difference of users at dest is {(10, 11): 2, (10, 12): 2, (11, 12): 3, (11, 13): 5, (12, 13): 2, (12, 14): 0, (13, 10): 0, (13, 14): 3, (14, 10): 3, (14, 11): 2} where age at dest is {(10, 11): 3, (10, 12): 3, (11, 12): 4, (11, 13): 6, (12, 13): 4, (12, 14): 2, (13, 10): 2, (13, 14): 5, (14, 10): 6, (14, 11): 5}, age at UAV is {10: 1, 11: 1, 12: 2, 13: 2, 14: 3}
+mad_age_dest = {(10, 11): 2, (10, 12): 2, (11, 12): 3, (11, 13): 5, (12, 13): 2, (12, 14): 0, (13, 10): 0, (13, 14): 3, (14, 10): 3, (14, 11): 2}
+updated_users = [[11, 13], [11, 12]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 1, 12: 2, 13: 2, 14: 3} when the general UAV age was {10: 1, 11: 1, 12: 2, 13: 2, 14: 3}
+users sampled under UAV 0 are [14, 12]
+sampled_users = [14, 12]
+updated_users are [[11, 12], [11, 13]], sampled_users = [12, 14], mad_action = [([14, 12], [[11, 13], [11, 12]])], actual_mad_action = 377
+
+
+current episode = 1
+
+
+ step = 6, mad selection is 377, actual action is [(12, 14), ([11, 12], [11, 13])], updated_users = [[11, 12], [11, 13]], sampled_users = [12, 14]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+for pair [11, 12], chance_update_loss = 0.11 and eval_env.update_loss = -1 
+pair [11, 12] was selected to be updated. so pair [11, 12]'s age at dest will become 11's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+for pair [11, 13], chance_update_loss = 0.35 and eval_env.update_loss = -1 
+pair [11, 13] was selected to be updated. so pair [11, 13]'s age at dest will become 11's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+user  10  was not sampled
+user  11  was not sampled
+ for user 12, chance_sample_loss = 0.94 and eval_env.sample_loss = -1 
+slot =  5  - user  12  period =  1  was selected to sample and sampled
+user  13  was not sampled
+ for user 14, chance_sample_loss = 0.71 and eval_env.sample_loss = -1 
+slot =  5  - user  14  period =  1  was selected to sample and sampled
+time = 6, sample_time = {10: [3, 5, 7, 10, 3, 5], 11: [2, 5, 8, 2, 5], 12: [2, 4, 6, 9, 2, 4, 6], 13: [1, 3, 6, 8, 10, 1, 4], 14: [1, 4, 7, 9, 1, 3, 6]}
+tx_attempt_UAV has become {10: [2], 11: [2], 12: [3], 13: [2], 14: [3]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [1], (11, 12): [2], (11, 13): [1], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [0], (14, 11): [1]}
+
+ step = 6 of episode 1 ended, UAV_age = {10: 2, 11: 2, 12: 1, 13: 3, 14: 1}, dest_age = {(10, 11): 4, (10, 12): 4, (11, 12): 2, (11, 13): 2, (12, 13): 5, (12, 14): 3, (13, 10): 3, (13, 14): 6, (14, 10): 7, (14, 11): 6} with sum = 42, tx_attempt_UAV = {10: [2], 11: [2], 12: [3], 13: [2], 14: [3]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [1], (11, 12): [2], (11, 13): [1], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [0], (14, 11): [1]}
+episode_wise_attempt_sample = 12
+episode_wise_success_sample = 12
+episode_wise_attempt_update = 10
+episode_wise_success_update = 10
+age difference of users at dest is {(10, 11): 2, (10, 12): 2, (11, 12): 0, (11, 13): 0, (12, 13): 4, (12, 14): 2, (13, 10): 0, (13, 14): 3, (14, 10): 6, (14, 11): 5} where age at dest is {(10, 11): 4, (10, 12): 4, (11, 12): 2, (11, 13): 2, (12, 13): 5, (12, 14): 3, (13, 10): 3, (13, 14): 6, (14, 10): 7, (14, 11): 6}, age at UAV is {10: 2, 11: 2, 12: 1, 13: 3, 14: 1}
+mad_age_dest = {(10, 11): 2, (10, 12): 2, (11, 12): 0, (11, 13): 0, (12, 13): 4, (12, 14): 2, (13, 10): 0, (13, 14): 3, (14, 10): 6, (14, 11): 5}
+updated_users = [[14, 10], [14, 11]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 2, 11: 2, 12: 1, 13: 3, 14: 1} when the general UAV age was {10: 2, 11: 2, 12: 1, 13: 3, 14: 1}
+users sampled under UAV 0 are [13, 11]
+sampled_users = [13, 11]
+updated_users are [[14, 10], [14, 11]], sampled_users = [11, 13], mad_action = [([13, 11], [[14, 10], [14, 11]])], actual_mad_action = 269
+
+
+current episode = 1
+
+
+ step = 7, mad selection is 269, actual action is [(11, 13), ([14, 10], [14, 11])], updated_users = [[14, 10], [14, 11]], sampled_users = [11, 13]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+for pair [14, 10], chance_update_loss = 0.84 and eval_env.update_loss = -1 
+pair [14, 10] was selected to be updated. so pair [14, 10]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+for pair [14, 11], chance_update_loss = 0.46 and eval_env.update_loss = -1 
+pair [14, 11] was selected to be updated. so pair [14, 11]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+user  10  was not sampled
+ for user 11, chance_sample_loss = 0.47 and eval_env.sample_loss = -1 
+slot =  6  - user  11  period =  1  was selected to sample and sampled
+user  12  was not sampled
+ for user 13, chance_sample_loss = 0.81 and eval_env.sample_loss = -1 
+slot =  6  - user  13  period =  1  was selected to sample and sampled
+user  14  was not sampled
+time = 7, sample_time = {10: [3, 5, 7, 10, 3, 5], 11: [2, 5, 8, 2, 5, 7], 12: [2, 4, 6, 9, 2, 4, 6], 13: [1, 3, 6, 8, 10, 1, 4, 7], 14: [1, 4, 7, 9, 1, 3, 6]}
+tx_attempt_UAV has become {10: [2], 11: [3], 12: [3], 13: [3], 14: [3]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [1], (11, 12): [2], (11, 13): [1], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [1], (14, 11): [2]}
+
+ step = 7 of episode 1 ended, UAV_age = {10: 3, 11: 1, 12: 2, 13: 1, 14: 2}, dest_age = {(10, 11): 5, (10, 12): 5, (11, 12): 3, (11, 13): 3, (12, 13): 6, (12, 14): 4, (13, 10): 4, (13, 14): 7, (14, 10): 2, (14, 11): 2} with sum = 41, tx_attempt_UAV = {10: [2], 11: [3], 12: [3], 13: [3], 14: [3]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [1], (11, 12): [2], (11, 13): [1], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [1], (14, 11): [2]}
+episode_wise_attempt_sample = 14
+episode_wise_success_sample = 14
+episode_wise_attempt_update = 12
+episode_wise_success_update = 12
+age difference of users at dest is {(10, 11): 2, (10, 12): 2, (11, 12): 2, (11, 13): 2, (12, 13): 4, (12, 14): 2, (13, 10): 3, (13, 14): 6, (14, 10): 0, (14, 11): 0} where age at dest is {(10, 11): 5, (10, 12): 5, (11, 12): 3, (11, 13): 3, (12, 13): 6, (12, 14): 4, (13, 10): 4, (13, 14): 7, (14, 10): 2, (14, 11): 2}, age at UAV is {10: 3, 11: 1, 12: 2, 13: 1, 14: 2}
+mad_age_dest = {(10, 11): 2, (10, 12): 2, (11, 12): 2, (11, 13): 2, (12, 13): 4, (12, 14): 2, (13, 10): 3, (13, 14): 6, (14, 10): 0, (14, 11): 0}
+updated_users = [[13, 14], [12, 13]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 3, 11: 1, 12: 2, 13: 1, 14: 2} when the general UAV age was {10: 3, 11: 1, 12: 2, 13: 1, 14: 2}
+users sampled under UAV 0 are [10, 14]
+sampled_users = [10, 14]
+updated_users are [[12, 13], [13, 14]], sampled_users = [10, 14], mad_action = [([10, 14], [[13, 14], [12, 13]])], actual_mad_action = 167
+
+
+current episode = 1
+
+
+ step = 8, mad selection is 167, actual action is [(10, 14), ([12, 13], [13, 14])], updated_users = [[12, 13], [13, 14]], sampled_users = [10, 14]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+for pair [12, 13], chance_update_loss = 0.64 and eval_env.update_loss = -1 
+pair [12, 13] was selected to be updated. so pair [12, 13]'s age at dest will become 12's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=3
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+for pair [13, 14], chance_update_loss = 0.88 and eval_env.update_loss = -1 
+pair [13, 14] was selected to be updated. so pair [13, 14]'s age at dest will become 13's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+ for user 10, chance_sample_loss = 0.39 and eval_env.sample_loss = -1 
+slot =  7  - user  10  period =  1  was selected to sample and sampled
+user  11  was not sampled
+user  12  was not sampled
+user  13  was not sampled
+ for user 14, chance_sample_loss = 0.1 and eval_env.sample_loss = -1 
+slot =  7  - user  14  period =  1  was selected to sample and sampled
+time = 8, sample_time = {10: [3, 5, 7, 10, 3, 5, 8], 11: [2, 5, 8, 2, 5, 7], 12: [2, 4, 6, 9, 2, 4, 6], 13: [1, 3, 6, 8, 10, 1, 4, 7], 14: [1, 4, 7, 9, 1, 3, 6, 8]}
+tx_attempt_UAV has become {10: [3], 11: [3], 12: [3], 13: [3], 14: [4]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [1], (11, 12): [2], (11, 13): [1], (12, 13): [2], (12, 14): [1], (13, 10): [1], (13, 14): [2], (14, 10): [1], (14, 11): [2]}
+
+ step = 8 of episode 1 ended, UAV_age = {10: 1, 11: 2, 12: 3, 13: 2, 14: 1}, dest_age = {(10, 11): 6, (10, 12): 6, (11, 12): 4, (11, 13): 4, (12, 13): 3, (12, 14): 5, (13, 10): 5, (13, 14): 2, (14, 10): 3, (14, 11): 3} with sum = 41, tx_attempt_UAV = {10: [3], 11: [3], 12: [3], 13: [3], 14: [4]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [1], (11, 12): [2], (11, 13): [1], (12, 13): [2], (12, 14): [1], (13, 10): [1], (13, 14): [2], (14, 10): [1], (14, 11): [2]}
+episode_wise_attempt_sample = 16
+episode_wise_success_sample = 16
+episode_wise_attempt_update = 14
+episode_wise_success_update = 14
+age difference of users at dest is {(10, 11): 5, (10, 12): 5, (11, 12): 2, (11, 13): 2, (12, 13): 0, (12, 14): 2, (13, 10): 3, (13, 14): 0, (14, 10): 2, (14, 11): 2} where age at dest is {(10, 11): 6, (10, 12): 6, (11, 12): 4, (11, 13): 4, (12, 13): 3, (12, 14): 5, (13, 10): 5, (13, 14): 2, (14, 10): 3, (14, 11): 3}, age at UAV is {10: 1, 11: 2, 12: 3, 13: 2, 14: 1}
+mad_age_dest = {(10, 11): 5, (10, 12): 5, (11, 12): 2, (11, 13): 2, (12, 13): 0, (12, 14): 2, (13, 10): 3, (13, 14): 0, (14, 10): 2, (14, 11): 2}
+updated_users = [[10, 11], [10, 12]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 2, 12: 3, 13: 2, 14: 1} when the general UAV age was {10: 1, 11: 2, 12: 3, 13: 2, 14: 1}
+users sampled under UAV 0 are [12, 11]
+sampled_users = [12, 11]
+updated_users are [[10, 11], [10, 12]], sampled_users = [11, 12], mad_action = [([12, 11], [[10, 11], [10, 12]])], actual_mad_action = 180
+
+
+current episode = 1
+
+
+ step = 9, mad selection is 180, actual action is [(11, 12), ([10, 11], [10, 12])], updated_users = [[10, 11], [10, 12]], sampled_users = [11, 12]
+for pair [10, 11], chance_update_loss = 0.23 and eval_env.update_loss = -1 
+pair [10, 11] was selected to be updated. so pair [10, 11]'s age at dest will become 10's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+for pair [10, 12], chance_update_loss = 0.31 and eval_env.update_loss = -1 
+pair [10, 12] was selected to be updated. so pair [10, 12]'s age at dest will become 10's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+user  10  was not sampled
+ for user 11, chance_sample_loss = 0.18 and eval_env.sample_loss = -1 
+slot =  8  - user  11  period =  1  was selected to sample and sampled
+ for user 12, chance_sample_loss = 0.17 and eval_env.sample_loss = -1 
+slot =  8  - user  12  period =  1  was selected to sample and sampled
+user  13  was not sampled
+user  14  was not sampled
+time = 9, sample_time = {10: [3, 5, 7, 10, 3, 5, 8], 11: [2, 5, 8, 2, 5, 7, 9], 12: [2, 4, 6, 9, 2, 4, 6, 9], 13: [1, 3, 6, 8, 10, 1, 4, 7], 14: [1, 4, 7, 9, 1, 3, 6, 8]}
+tx_attempt_UAV has become {10: [3], 11: [4], 12: [4], 13: [3], 14: [4]} and tx_attempt_dest has become {(10, 11): [2], (10, 12): [2], (11, 12): [2], (11, 13): [1], (12, 13): [2], (12, 14): [1], (13, 10): [1], (13, 14): [2], (14, 10): [1], (14, 11): [2]}
+
+ step = 9 of episode 1 ended, UAV_age = {10: 2, 11: 1, 12: 1, 13: 3, 14: 2}, dest_age = {(10, 11): 2, (10, 12): 2, (11, 12): 5, (11, 13): 5, (12, 13): 4, (12, 14): 6, (13, 10): 6, (13, 14): 3, (14, 10): 4, (14, 11): 4} with sum = 41, tx_attempt_UAV = {10: [3], 11: [4], 12: [4], 13: [3], 14: [4]}, tx_attempt_dest = {(10, 11): [2], (10, 12): [2], (11, 12): [2], (11, 13): [1], (12, 13): [2], (12, 14): [1], (13, 10): [1], (13, 14): [2], (14, 10): [1], (14, 11): [2]}
+episode_wise_attempt_sample = 18
+episode_wise_success_sample = 18
+episode_wise_attempt_update = 16
+episode_wise_success_update = 16
+age difference of users at dest is {(10, 11): 0, (10, 12): 0, (11, 12): 4, (11, 13): 4, (12, 13): 3, (12, 14): 5, (13, 10): 3, (13, 14): 0, (14, 10): 2, (14, 11): 2} where age at dest is {(10, 11): 2, (10, 12): 2, (11, 12): 5, (11, 13): 5, (12, 13): 4, (12, 14): 6, (13, 10): 6, (13, 14): 3, (14, 10): 4, (14, 11): 4}, age at UAV is {10: 2, 11: 1, 12: 1, 13: 3, 14: 2}
+mad_age_dest = {(10, 11): 0, (10, 12): 0, (11, 12): 4, (11, 13): 4, (12, 13): 3, (12, 14): 5, (13, 10): 3, (13, 14): 0, (14, 10): 2, (14, 11): 2}
+updated_users = [[12, 14], [11, 13]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 2, 11: 1, 12: 1, 13: 3, 14: 2} when the general UAV age was {10: 2, 11: 1, 12: 1, 13: 3, 14: 2}
+users sampled under UAV 0 are [13, 10]
+sampled_users = [13, 10]
+updated_users are [[11, 13], [12, 14]], sampled_users = [10, 13], mad_action = [([13, 10], [[12, 14], [11, 13]])], actual_mad_action = 115
+
+
+current episode = 1
+
+
+ step = 10, mad selection is 115, actual action is [(10, 13), ([11, 13], [12, 14])], updated_users = [[11, 13], [12, 14]], sampled_users = [10, 13]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+for pair [11, 13], chance_update_loss = 0.08 and eval_env.update_loss = -1 
+pair [11, 13] was selected to be updated. so pair [11, 13]'s age at dest will become 11's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [12, 13]  was not updated
+for pair [12, 14], chance_update_loss = 0.39 and eval_env.update_loss = -1 
+pair [12, 14] was selected to be updated. so pair [12, 14]'s age at dest will become 12's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+ for user 10, chance_sample_loss = 0.54 and eval_env.sample_loss = -1 
+slot =  9  - user  10  period =  1  was selected to sample and sampled
+user  11  was not sampled
+user  12  was not sampled
+ for user 13, chance_sample_loss = 0.17 and eval_env.sample_loss = -1 
+slot =  9  - user  13  period =  1  was selected to sample and sampled
+user  14  was not sampled
+time = 10, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10], 11: [2, 5, 8, 2, 5, 7, 9], 12: [2, 4, 6, 9, 2, 4, 6, 9], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10], 14: [1, 4, 7, 9, 1, 3, 6, 8]}
+tx_attempt_UAV has become {10: [4], 11: [4], 12: [4], 13: [4], 14: [4]} and tx_attempt_dest has become {(10, 11): [2], (10, 12): [2], (11, 12): [2], (11, 13): [2], (12, 13): [2], (12, 14): [2], (13, 10): [1], (13, 14): [2], (14, 10): [1], (14, 11): [2]}
+
+ step = 10 of episode 1 ended, UAV_age = {10: 1, 11: 2, 12: 2, 13: 1, 14: 3}, dest_age = {(10, 11): 3, (10, 12): 3, (11, 12): 6, (11, 13): 2, (12, 13): 5, (12, 14): 2, (13, 10): 7, (13, 14): 4, (14, 10): 5, (14, 11): 5} with sum = 42, tx_attempt_UAV = {10: [4], 11: [4], 12: [4], 13: [4], 14: [4]}, tx_attempt_dest = {(10, 11): [2], (10, 12): [2], (11, 12): [2], (11, 13): [2], (12, 13): [2], (12, 14): [2], (13, 10): [1], (13, 14): [2], (14, 10): [1], (14, 11): [2]}
+episode_wise_attempt_sample = 20
+episode_wise_success_sample = 20
+episode_wise_attempt_update = 18
+episode_wise_success_update = 18
+age_dist_UAV = {10: [1, 1], 11: [3, 2], 12: [2, 2], 13: [1, 1], 14: [2, 3]}, age_dist_dest = {(10, 11): [4, 3], (10, 12): [6, 3], (11, 12): [3, 6], (11, 13): [6, 2], (12, 13): [2, 5], (12, 14): [5, 2], (13, 10): [5, 7], (13, 14): [3, 4], (14, 10): [4, 5], (14, 11): [4, 5]}
+results for step 10 of episode 1
+attempt_sample = [20, 20]
+success_sample = [20, 20]
+attempt_update = [18, 18]
+success_update = [18, 18]
+
+*****************************************************
+
+
+
+tx_rx_pairs = [[10, 11], [10, 12], [11, 12], [11, 13], [12, 13], [12, 14], [13, 10], [13, 14], [14, 10], [14, 11]] with length 10 and tx_users = [10, 11, 12, 13, 14] with length 5
+user list = [10, 11, 12, 13, 14]
+UAV list  = [0]
+self.n_users = 5, self.n_UAVs = 1, self.act_coverage = {0: [10, 11, 12, 13, 14]}, self.update_loss = {(10, 11): -1, (10, 12): -1, (11, 12): -1, (11, 13): -1, (12, 13): -1, (12, 14): -1, (13, 10): -1, (13, 14): -1, (14, 10): -1, (14, 11): -1}, self.sample_loss = {10: -1, 11: -1, 12: -1, 13: -1, 14: -1}, self.UAV_list = [0], self.user_list = [10, 11, 12, 13, 14]
+
+eval_net has a action_space of size  (450, 2, 2)
+
+eval_net started and age_dist_UAV = {10: [], 11: [], 12: [], 13: [], 14: []}, age_dist_dest = {(10, 11): [], (10, 12): [], (11, 12): [], (11, 13): [], (12, 13): [], (12, 14): [], (13, 10): [], (13, 14): [], (14, 10): [], (14, 11): []}, tx_attempt_dest = {(10, 11): [], (10, 12): [], (11, 12): [], (11, 13): [], (12, 13): [], (12, 14): [], (13, 10): [], (13, 14): [], (14, 10): [], (14, 11): []}, tx_attempt_UAV = {10: [], 11: [], 12: [], 13: [], 14: []}
+
+
+eval_net after reset, episode 1 begins with self._state = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1] with shape (16,) when CSI_as_state = False and sample_error_in_CSI = False
+
+age difference of users at dest is {(10, 11): 0, (10, 12): 0, (11, 12): 0, (11, 13): 0, (12, 13): 0, (12, 14): 0, (13, 10): 0, (13, 14): 0, (14, 10): 0, (14, 11): 0} where age at dest is {(10, 11): 1, (10, 12): 1, (11, 12): 1, (11, 13): 1, (12, 13): 1, (12, 14): 1, (13, 10): 1, (13, 14): 1, (14, 10): 1, (14, 11): 1}, age at UAV is {10: 1, 11: 1, 12: 1, 13: 1, 14: 1}
+mad_age_dest = {(10, 11): 0, (10, 12): 0, (11, 12): 0, (11, 13): 0, (12, 13): 0, (12, 14): 0, (13, 10): 0, (13, 14): 0, (14, 10): 0, (14, 11): 0}
+updated_users = [[10, 12], [10, 11]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 1, 12: 1, 13: 1, 14: 1} when the general UAV age was {10: 1, 11: 1, 12: 1, 13: 1, 14: 1}
+users sampled under UAV 0 are [10, 11]
+sampled_users = [10, 11]
+updated_users are [[10, 11], [10, 12]], sampled_users = [10, 11], mad_action = [([10, 11], [[10, 12], [10, 11]])], actual_mad_action = 0
+
+
+current episode = 2
+
+
+ step = 1, mad selection is 0, actual action is [(10, 11), ([10, 11], [10, 12])], updated_users = [[10, 11], [10, 12]], sampled_users = [10, 11]
+ for user 10, chance_sample_loss = 0.61 and eval_env.sample_loss = -1 
+slot =  0  - user  10  period =  1  was selected to sample and sampled
+ for user 11, chance_sample_loss = 0.12 and eval_env.sample_loss = -1 
+slot =  0  - user  11  period =  1  was selected to sample and sampled
+user  12  was not sampled
+user  13  was not sampled
+user  14  was not sampled
+time = 1, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1], 11: [2, 5, 8, 2, 5, 7, 9, 1], 12: [2, 4, 6, 9, 2, 4, 6, 9], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10], 14: [1, 4, 7, 9, 1, 3, 6, 8]}
+tx_attempt_UAV has become {10: [1], 11: [1], 12: [0], 13: [0], 14: [0]} and tx_attempt_dest has become {(10, 11): [0], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [0], (14, 11): [0]}
+
+ step = 1 of episode 2 ended, UAV_age = {10: 1, 11: 1, 12: 2, 13: 2, 14: 2}, dest_age = {(10, 11): 2, (10, 12): 2, (11, 12): 2, (11, 13): 2, (12, 13): 2, (12, 14): 2, (13, 10): 2, (13, 14): 2, (14, 10): 2, (14, 11): 2} with sum = 20, tx_attempt_UAV = {10: [1], 11: [1], 12: [0], 13: [0], 14: [0]}, tx_attempt_dest = {(10, 11): [0], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [0], (14, 11): [0]}
+episode_wise_attempt_sample = 2
+episode_wise_success_sample = 2
+episode_wise_attempt_update = 0
+episode_wise_success_update = 0
+age difference of users at dest is {(10, 11): 1, (10, 12): 1, (11, 12): 1, (11, 13): 1, (12, 13): 0, (12, 14): 0, (13, 10): 0, (13, 14): 0, (14, 10): 0, (14, 11): 0} where age at dest is {(10, 11): 2, (10, 12): 2, (11, 12): 2, (11, 13): 2, (12, 13): 2, (12, 14): 2, (13, 10): 2, (13, 14): 2, (14, 10): 2, (14, 11): 2}, age at UAV is {10: 1, 11: 1, 12: 2, 13: 2, 14: 2}
+mad_age_dest = {(10, 11): 1, (10, 12): 1, (11, 12): 1, (11, 13): 1, (12, 13): 0, (12, 14): 0, (13, 10): 0, (13, 14): 0, (14, 10): 0, (14, 11): 0}
+updated_users = [[11, 12], [10, 12]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 1, 12: 2, 13: 2, 14: 2} when the general UAV age was {10: 1, 11: 1, 12: 2, 13: 2, 14: 2}
+users sampled under UAV 0 are [14, 13]
+sampled_users = [14, 13]
+updated_users are [[10, 12], [11, 12]], sampled_users = [13, 14], mad_action = [([14, 13], [[11, 12], [10, 12]])], actual_mad_action = 414
+
+
+current episode = 2
+
+
+ step = 2, mad selection is 414, actual action is [(13, 14), ([10, 12], [11, 12])], updated_users = [[10, 12], [11, 12]], sampled_users = [13, 14]
+pair  [10, 11]  was not updated
+for pair [10, 12], chance_update_loss = 0.85 and eval_env.update_loss = -1 
+pair [10, 12] was selected to be updated. so pair [10, 12]'s age at dest will become 10's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+for pair [11, 12], chance_update_loss = 0.55 and eval_env.update_loss = -1 
+pair [11, 12] was selected to be updated. so pair [11, 12]'s age at dest will become 11's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+user  10  was not sampled
+user  11  was not sampled
+user  12  was not sampled
+ for user 13, chance_sample_loss = 0.29 and eval_env.sample_loss = -1 
+slot =  1  - user  13  period =  1  was selected to sample and sampled
+ for user 14, chance_sample_loss = 0.87 and eval_env.sample_loss = -1 
+slot =  1  - user  14  period =  1  was selected to sample and sampled
+time = 2, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1], 11: [2, 5, 8, 2, 5, 7, 9, 1], 12: [2, 4, 6, 9, 2, 4, 6, 9], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2]}
+tx_attempt_UAV has become {10: [1], 11: [1], 12: [0], 13: [1], 14: [1]} and tx_attempt_dest has become {(10, 11): [0], (10, 12): [1], (11, 12): [1], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [0], (14, 11): [0]}
+
+ step = 2 of episode 2 ended, UAV_age = {10: 2, 11: 2, 12: 3, 13: 1, 14: 1}, dest_age = {(10, 11): 3, (10, 12): 2, (11, 12): 2, (11, 13): 3, (12, 13): 3, (12, 14): 3, (13, 10): 3, (13, 14): 3, (14, 10): 3, (14, 11): 3} with sum = 28, tx_attempt_UAV = {10: [1], 11: [1], 12: [0], 13: [1], 14: [1]}, tx_attempt_dest = {(10, 11): [0], (10, 12): [1], (11, 12): [1], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [0], (14, 11): [0]}
+episode_wise_attempt_sample = 4
+episode_wise_success_sample = 4
+episode_wise_attempt_update = 2
+episode_wise_success_update = 2
+age difference of users at dest is {(10, 11): 1, (10, 12): 0, (11, 12): 0, (11, 13): 1, (12, 13): 0, (12, 14): 0, (13, 10): 2, (13, 14): 2, (14, 10): 2, (14, 11): 2} where age at dest is {(10, 11): 3, (10, 12): 2, (11, 12): 2, (11, 13): 3, (12, 13): 3, (12, 14): 3, (13, 10): 3, (13, 14): 3, (14, 10): 3, (14, 11): 3}, age at UAV is {10: 2, 11: 2, 12: 3, 13: 1, 14: 1}
+mad_age_dest = {(10, 11): 1, (10, 12): 0, (11, 12): 0, (11, 13): 1, (12, 13): 0, (12, 14): 0, (13, 10): 2, (13, 14): 2, (14, 10): 2, (14, 11): 2}
+updated_users = [[14, 11], [14, 10]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 2, 11: 2, 12: 3, 13: 1, 14: 1} when the general UAV age was {10: 2, 11: 2, 12: 3, 13: 1, 14: 1}
+users sampled under UAV 0 are [12, 11]
+sampled_users = [12, 11]
+updated_users are [[14, 10], [14, 11]], sampled_users = [11, 12], mad_action = [([12, 11], [[14, 11], [14, 10]])], actual_mad_action = 224
+
+
+current episode = 2
+
+
+ step = 3, mad selection is 224, actual action is [(11, 12), ([14, 10], [14, 11])], updated_users = [[14, 10], [14, 11]], sampled_users = [11, 12]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+for pair [14, 10], chance_update_loss = 0.53 and eval_env.update_loss = -1 
+pair [14, 10] was selected to be updated. so pair [14, 10]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+for pair [14, 11], chance_update_loss = 0.96 and eval_env.update_loss = -1 
+pair [14, 11] was selected to be updated. so pair [14, 11]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+user  10  was not sampled
+ for user 11, chance_sample_loss = 0.05 and eval_env.sample_loss = -1 
+slot =  2  - user  11  period =  1  was selected to sample and sampled
+ for user 12, chance_sample_loss = 0.62 and eval_env.sample_loss = -1 
+slot =  2  - user  12  period =  1  was selected to sample and sampled
+user  13  was not sampled
+user  14  was not sampled
+time = 3, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2]}
+tx_attempt_UAV has become {10: [1], 11: [2], 12: [1], 13: [1], 14: [1]} and tx_attempt_dest has become {(10, 11): [0], (10, 12): [1], (11, 12): [1], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+
+ step = 3 of episode 2 ended, UAV_age = {10: 3, 11: 1, 12: 1, 13: 2, 14: 2}, dest_age = {(10, 11): 4, (10, 12): 3, (11, 12): 3, (11, 13): 4, (12, 13): 4, (12, 14): 4, (13, 10): 4, (13, 14): 4, (14, 10): 2, (14, 11): 2} with sum = 34, tx_attempt_UAV = {10: [1], 11: [2], 12: [1], 13: [1], 14: [1]}, tx_attempt_dest = {(10, 11): [0], (10, 12): [1], (11, 12): [1], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+episode_wise_attempt_sample = 6
+episode_wise_success_sample = 6
+episode_wise_attempt_update = 4
+episode_wise_success_update = 4
+age difference of users at dest is {(10, 11): 1, (10, 12): 0, (11, 12): 2, (11, 13): 3, (12, 13): 3, (12, 14): 3, (13, 10): 2, (13, 14): 2, (14, 10): 0, (14, 11): 0} where age at dest is {(10, 11): 4, (10, 12): 3, (11, 12): 3, (11, 13): 4, (12, 13): 4, (12, 14): 4, (13, 10): 4, (13, 14): 4, (14, 10): 2, (14, 11): 2}, age at UAV is {10: 3, 11: 1, 12: 1, 13: 2, 14: 2}
+mad_age_dest = {(10, 11): 1, (10, 12): 0, (11, 12): 2, (11, 13): 3, (12, 13): 3, (12, 14): 3, (13, 10): 2, (13, 14): 2, (14, 10): 0, (14, 11): 0}
+updated_users = [[12, 13], [11, 13]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 3, 11: 1, 12: 1, 13: 2, 14: 2} when the general UAV age was {10: 3, 11: 1, 12: 1, 13: 2, 14: 2}
+users sampled under UAV 0 are [10, 14]
+sampled_users = [10, 14]
+updated_users are [[11, 13], [12, 13]], sampled_users = [10, 14], mad_action = [([10, 14], [[12, 13], [11, 13]])], actual_mad_action = 159
+
+
+current episode = 2
+
+
+ step = 4, mad selection is 159, actual action is [(10, 14), ([11, 13], [12, 13])], updated_users = [[11, 13], [12, 13]], sampled_users = [10, 14]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+for pair [11, 13], chance_update_loss = 0.27 and eval_env.update_loss = -1 
+pair [11, 13] was selected to be updated. so pair [11, 13]'s age at dest will become 11's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+for pair [12, 13], chance_update_loss = 0.22 and eval_env.update_loss = -1 
+pair [12, 13] was selected to be updated. so pair [12, 13]'s age at dest will become 12's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+ for user 10, chance_sample_loss = 0.47 and eval_env.sample_loss = -1 
+slot =  3  - user  10  period =  1  was selected to sample and sampled
+user  11  was not sampled
+user  12  was not sampled
+user  13  was not sampled
+ for user 14, chance_sample_loss = 0.01 and eval_env.sample_loss = -1 
+slot =  3  - user  14  period =  1  was selected to sample and sampled
+time = 4, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4]}
+tx_attempt_UAV has become {10: [2], 11: [2], 12: [1], 13: [1], 14: [2]} and tx_attempt_dest has become {(10, 11): [0], (10, 12): [1], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+
+ step = 4 of episode 2 ended, UAV_age = {10: 1, 11: 2, 12: 2, 13: 3, 14: 1}, dest_age = {(10, 11): 5, (10, 12): 4, (11, 12): 4, (11, 13): 2, (12, 13): 2, (12, 14): 5, (13, 10): 5, (13, 14): 5, (14, 10): 3, (14, 11): 3} with sum = 38, tx_attempt_UAV = {10: [2], 11: [2], 12: [1], 13: [1], 14: [2]}, tx_attempt_dest = {(10, 11): [0], (10, 12): [1], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+episode_wise_attempt_sample = 8
+episode_wise_success_sample = 8
+episode_wise_attempt_update = 6
+episode_wise_success_update = 6
+age difference of users at dest is {(10, 11): 4, (10, 12): 3, (11, 12): 2, (11, 13): 0, (12, 13): 0, (12, 14): 3, (13, 10): 2, (13, 14): 2, (14, 10): 2, (14, 11): 2} where age at dest is {(10, 11): 5, (10, 12): 4, (11, 12): 4, (11, 13): 2, (12, 13): 2, (12, 14): 5, (13, 10): 5, (13, 14): 5, (14, 10): 3, (14, 11): 3}, age at UAV is {10: 1, 11: 2, 12: 2, 13: 3, 14: 1}
+mad_age_dest = {(10, 11): 4, (10, 12): 3, (11, 12): 2, (11, 13): 0, (12, 13): 0, (12, 14): 3, (13, 10): 2, (13, 14): 2, (14, 10): 2, (14, 11): 2}
+updated_users = [[10, 11], [10, 12]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 2, 12: 2, 13: 3, 14: 1} when the general UAV age was {10: 1, 11: 2, 12: 2, 13: 3, 14: 1}
+users sampled under UAV 0 are [13, 11]
+sampled_users = [13, 11]
+updated_users are [[10, 11], [10, 12]], sampled_users = [11, 13], mad_action = [([13, 11], [[10, 11], [10, 12]])], actual_mad_action = 225
+
+
+current episode = 2
+
+
+ step = 5, mad selection is 225, actual action is [(11, 13), ([10, 11], [10, 12])], updated_users = [[10, 11], [10, 12]], sampled_users = [11, 13]
+for pair [10, 11], chance_update_loss = 0.59 and eval_env.update_loss = -1 
+pair [10, 11] was selected to be updated. so pair [10, 11]'s age at dest will become 10's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+for pair [10, 12], chance_update_loss = 0.84 and eval_env.update_loss = -1 
+pair [10, 12] was selected to be updated. so pair [10, 12]'s age at dest will become 10's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+user  10  was not sampled
+ for user 11, chance_sample_loss = 0.96 and eval_env.sample_loss = -1 
+slot =  4  - user  11  period =  1  was selected to sample and sampled
+user  12  was not sampled
+ for user 13, chance_sample_loss = 0.12 and eval_env.sample_loss = -1 
+slot =  4  - user  13  period =  1  was selected to sample and sampled
+user  14  was not sampled
+time = 5, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4]}
+tx_attempt_UAV has become {10: [2], 11: [3], 12: [1], 13: [2], 14: [2]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [2], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+
+ step = 5 of episode 2 ended, UAV_age = {10: 2, 11: 1, 12: 3, 13: 1, 14: 2}, dest_age = {(10, 11): 2, (10, 12): 2, (11, 12): 5, (11, 13): 3, (12, 13): 3, (12, 14): 6, (13, 10): 6, (13, 14): 6, (14, 10): 4, (14, 11): 4} with sum = 41, tx_attempt_UAV = {10: [2], 11: [3], 12: [1], 13: [2], 14: [2]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [2], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+episode_wise_attempt_sample = 10
+episode_wise_success_sample = 10
+episode_wise_attempt_update = 8
+episode_wise_success_update = 8
+age difference of users at dest is {(10, 11): 0, (10, 12): 0, (11, 12): 4, (11, 13): 2, (12, 13): 0, (12, 14): 3, (13, 10): 5, (13, 14): 5, (14, 10): 2, (14, 11): 2} where age at dest is {(10, 11): 2, (10, 12): 2, (11, 12): 5, (11, 13): 3, (12, 13): 3, (12, 14): 6, (13, 10): 6, (13, 14): 6, (14, 10): 4, (14, 11): 4}, age at UAV is {10: 2, 11: 1, 12: 3, 13: 1, 14: 2}
+mad_age_dest = {(10, 11): 0, (10, 12): 0, (11, 12): 4, (11, 13): 2, (12, 13): 0, (12, 14): 3, (13, 10): 5, (13, 14): 5, (14, 10): 2, (14, 11): 2}
+updated_users = [[13, 10], [13, 14]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 2, 11: 1, 12: 3, 13: 1, 14: 2} when the general UAV age was {10: 2, 11: 1, 12: 3, 13: 1, 14: 2}
+users sampled under UAV 0 are [12, 14]
+sampled_users = [12, 14]
+updated_users are [[13, 10], [13, 14]], sampled_users = [12, 14], mad_action = [([12, 14], [[13, 10], [13, 14]])], actual_mad_action = 399
+
+
+current episode = 2
+
+
+ step = 6, mad selection is 399, actual action is [(12, 14), ([13, 10], [13, 14])], updated_users = [[13, 10], [13, 14]], sampled_users = [12, 14]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+for pair [13, 10], chance_update_loss = 0.04 and eval_env.update_loss = -1 
+pair [13, 10] was selected to be updated. so pair [13, 10]'s age at dest will become 13's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+for pair [13, 14], chance_update_loss = 0.29 and eval_env.update_loss = -1 
+pair [13, 14] was selected to be updated. so pair [13, 14]'s age at dest will become 13's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+user  10  was not sampled
+user  11  was not sampled
+ for user 12, chance_sample_loss = 0.16 and eval_env.sample_loss = -1 
+slot =  5  - user  12  period =  1  was selected to sample and sampled
+user  13  was not sampled
+ for user 14, chance_sample_loss = 0.56 and eval_env.sample_loss = -1 
+slot =  5  - user  14  period =  1  was selected to sample and sampled
+time = 6, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3, 6], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4, 6]}
+tx_attempt_UAV has become {10: [2], 11: [3], 12: [2], 13: [2], 14: [3]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [2], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [0], (13, 10): [1], (13, 14): [1], (14, 10): [1], (14, 11): [1]}
+
+ step = 6 of episode 2 ended, UAV_age = {10: 3, 11: 2, 12: 1, 13: 2, 14: 1}, dest_age = {(10, 11): 3, (10, 12): 3, (11, 12): 6, (11, 13): 4, (12, 13): 4, (12, 14): 7, (13, 10): 2, (13, 14): 2, (14, 10): 5, (14, 11): 5} with sum = 41, tx_attempt_UAV = {10: [2], 11: [3], 12: [2], 13: [2], 14: [3]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [2], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [0], (13, 10): [1], (13, 14): [1], (14, 10): [1], (14, 11): [1]}
+episode_wise_attempt_sample = 12
+episode_wise_success_sample = 12
+episode_wise_attempt_update = 10
+episode_wise_success_update = 10
+age difference of users at dest is {(10, 11): 0, (10, 12): 0, (11, 12): 4, (11, 13): 2, (12, 13): 3, (12, 14): 6, (13, 10): 0, (13, 14): 0, (14, 10): 4, (14, 11): 4} where age at dest is {(10, 11): 3, (10, 12): 3, (11, 12): 6, (11, 13): 4, (12, 13): 4, (12, 14): 7, (13, 10): 2, (13, 14): 2, (14, 10): 5, (14, 11): 5}, age at UAV is {10: 3, 11: 2, 12: 1, 13: 2, 14: 1}
+mad_age_dest = {(10, 11): 0, (10, 12): 0, (11, 12): 4, (11, 13): 2, (12, 13): 3, (12, 14): 6, (13, 10): 0, (13, 14): 0, (14, 10): 4, (14, 11): 4}
+updated_users = [[12, 14], [11, 12]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 3, 11: 2, 12: 1, 13: 2, 14: 1} when the general UAV age was {10: 3, 11: 2, 12: 1, 13: 2, 14: 1}
+users sampled under UAV 0 are [10, 11]
+sampled_users = [10, 11]
+updated_users are [[11, 12], [12, 14]], sampled_users = [10, 11], mad_action = [([10, 11], [[12, 14], [11, 12]])], actual_mad_action = 19
+
+
+current episode = 2
+
+
+ step = 7, mad selection is 19, actual action is [(10, 11), ([11, 12], [12, 14])], updated_users = [[11, 12], [12, 14]], sampled_users = [10, 11]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+for pair [11, 12], chance_update_loss = 0.65 and eval_env.update_loss = -1 
+pair [11, 12] was selected to be updated. so pair [11, 12]'s age at dest will become 11's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=3
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+for pair [12, 14], chance_update_loss = 0.04 and eval_env.update_loss = -1 
+pair [12, 14] was selected to be updated. so pair [12, 14]'s age at dest will become 12's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+ for user 10, chance_sample_loss = 0.85 and eval_env.sample_loss = -1 
+slot =  6  - user  10  period =  1  was selected to sample and sampled
+ for user 11, chance_sample_loss = 0.68 and eval_env.sample_loss = -1 
+slot =  6  - user  11  period =  1  was selected to sample and sampled
+user  12  was not sampled
+user  13  was not sampled
+user  14  was not sampled
+time = 7, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4, 7], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5, 7], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3, 6], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4, 6]}
+tx_attempt_UAV has become {10: [3], 11: [4], 12: [2], 13: [2], 14: [3]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [2], (11, 12): [2], (11, 13): [1], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [1], (14, 11): [1]}
+
+ step = 7 of episode 2 ended, UAV_age = {10: 1, 11: 1, 12: 2, 13: 3, 14: 2}, dest_age = {(10, 11): 4, (10, 12): 4, (11, 12): 3, (11, 13): 5, (12, 13): 5, (12, 14): 2, (13, 10): 3, (13, 14): 3, (14, 10): 6, (14, 11): 6} with sum = 41, tx_attempt_UAV = {10: [3], 11: [4], 12: [2], 13: [2], 14: [3]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [2], (11, 12): [2], (11, 13): [1], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [1], (14, 11): [1]}
+episode_wise_attempt_sample = 14
+episode_wise_success_sample = 14
+episode_wise_attempt_update = 12
+episode_wise_success_update = 12
+age difference of users at dest is {(10, 11): 3, (10, 12): 3, (11, 12): 2, (11, 13): 4, (12, 13): 3, (12, 14): 0, (13, 10): 0, (13, 14): 0, (14, 10): 4, (14, 11): 4} where age at dest is {(10, 11): 4, (10, 12): 4, (11, 12): 3, (11, 13): 5, (12, 13): 5, (12, 14): 2, (13, 10): 3, (13, 14): 3, (14, 10): 6, (14, 11): 6}, age at UAV is {10: 1, 11: 1, 12: 2, 13: 3, 14: 2}
+mad_age_dest = {(10, 11): 3, (10, 12): 3, (11, 12): 2, (11, 13): 4, (12, 13): 3, (12, 14): 0, (13, 10): 0, (13, 14): 0, (14, 10): 4, (14, 11): 4}
+updated_users = [[14, 10], [11, 13]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 1, 12: 2, 13: 3, 14: 2} when the general UAV age was {10: 1, 11: 1, 12: 2, 13: 3, 14: 2}
+users sampled under UAV 0 are [13, 14]
+sampled_users = [13, 14]
+updated_users are [[11, 13], [14, 10]], sampled_users = [13, 14], mad_action = [([13, 14], [[14, 10], [11, 13]])], actual_mad_action = 433
+
+
+current episode = 2
+
+
+ step = 8, mad selection is 433, actual action is [(13, 14), ([11, 13], [14, 10])], updated_users = [[11, 13], [14, 10]], sampled_users = [13, 14]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+for pair [11, 13], chance_update_loss = 0.4 and eval_env.update_loss = -1 
+pair [11, 13] was selected to be updated. so pair [11, 13]'s age at dest will become 11's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+for pair [14, 10], chance_update_loss = 0.34 and eval_env.update_loss = -1 
+pair [14, 10] was selected to be updated. so pair [14, 10]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=3
+pair  [14, 11]  was not updated
+user  10  was not sampled
+user  11  was not sampled
+user  12  was not sampled
+ for user 13, chance_sample_loss = 0.67 and eval_env.sample_loss = -1 
+slot =  7  - user  13  period =  1  was selected to sample and sampled
+ for user 14, chance_sample_loss = 0.62 and eval_env.sample_loss = -1 
+slot =  7  - user  14  period =  1  was selected to sample and sampled
+time = 8, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4, 7], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5, 7], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3, 6], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5, 8], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4, 6, 8]}
+tx_attempt_UAV has become {10: [3], 11: [4], 12: [2], 13: [3], 14: [4]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [2], (11, 12): [2], (11, 13): [2], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [2], (14, 11): [1]}
+
+ step = 8 of episode 2 ended, UAV_age = {10: 2, 11: 2, 12: 3, 13: 1, 14: 1}, dest_age = {(10, 11): 5, (10, 12): 5, (11, 12): 4, (11, 13): 2, (12, 13): 6, (12, 14): 3, (13, 10): 4, (13, 14): 4, (14, 10): 3, (14, 11): 7} with sum = 43, tx_attempt_UAV = {10: [3], 11: [4], 12: [2], 13: [3], 14: [4]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [2], (11, 12): [2], (11, 13): [2], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [2], (14, 11): [1]}
+episode_wise_attempt_sample = 16
+episode_wise_success_sample = 16
+episode_wise_attempt_update = 14
+episode_wise_success_update = 14
+age difference of users at dest is {(10, 11): 3, (10, 12): 3, (11, 12): 2, (11, 13): 0, (12, 13): 3, (12, 14): 0, (13, 10): 3, (13, 14): 3, (14, 10): 2, (14, 11): 6} where age at dest is {(10, 11): 5, (10, 12): 5, (11, 12): 4, (11, 13): 2, (12, 13): 6, (12, 14): 3, (13, 10): 4, (13, 14): 4, (14, 10): 3, (14, 11): 7}, age at UAV is {10: 2, 11: 2, 12: 3, 13: 1, 14: 1}
+mad_age_dest = {(10, 11): 3, (10, 12): 3, (11, 12): 2, (11, 13): 0, (12, 13): 3, (12, 14): 0, (13, 10): 3, (13, 14): 3, (14, 10): 2, (14, 11): 6}
+updated_users = [[14, 11], [10, 12]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 2, 11: 2, 12: 3, 13: 1, 14: 1} when the general UAV age was {10: 2, 11: 2, 12: 3, 13: 1, 14: 1}
+users sampled under UAV 0 are [12, 11]
+sampled_users = [12, 11]
+updated_users are [[10, 12], [14, 11]], sampled_users = [11, 12], mad_action = [([12, 11], [[14, 11], [10, 12]])], actual_mad_action = 196
+
+
+current episode = 2
+
+
+ step = 9, mad selection is 196, actual action is [(11, 12), ([10, 12], [14, 11])], updated_users = [[10, 12], [14, 11]], sampled_users = [11, 12]
+pair  [10, 11]  was not updated
+for pair [10, 12], chance_update_loss = 0.74 and eval_env.update_loss = -1 
+pair [10, 12] was selected to be updated. so pair [10, 12]'s age at dest will become 10's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=3
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+for pair [14, 11], chance_update_loss = 0.94 and eval_env.update_loss = -1 
+pair [14, 11] was selected to be updated. so pair [14, 11]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+user  10  was not sampled
+ for user 11, chance_sample_loss = 0.18 and eval_env.sample_loss = -1 
+slot =  8  - user  11  period =  1  was selected to sample and sampled
+ for user 12, chance_sample_loss = 0.61 and eval_env.sample_loss = -1 
+slot =  8  - user  12  period =  1  was selected to sample and sampled
+user  13  was not sampled
+user  14  was not sampled
+time = 9, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4, 7], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5, 7, 9], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3, 6, 9], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5, 8], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4, 6, 8]}
+tx_attempt_UAV has become {10: [3], 11: [5], 12: [3], 13: [3], 14: [4]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [3], (11, 12): [2], (11, 13): [2], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [2], (14, 11): [2]}
+
+ step = 9 of episode 2 ended, UAV_age = {10: 3, 11: 1, 12: 1, 13: 2, 14: 2}, dest_age = {(10, 11): 6, (10, 12): 3, (11, 12): 5, (11, 13): 3, (12, 13): 7, (12, 14): 4, (13, 10): 5, (13, 14): 5, (14, 10): 4, (14, 11): 2} with sum = 44, tx_attempt_UAV = {10: [3], 11: [5], 12: [3], 13: [3], 14: [4]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [3], (11, 12): [2], (11, 13): [2], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [2], (14, 11): [2]}
+episode_wise_attempt_sample = 18
+episode_wise_success_sample = 18
+episode_wise_attempt_update = 16
+episode_wise_success_update = 16
+age difference of users at dest is {(10, 11): 3, (10, 12): 0, (11, 12): 4, (11, 13): 2, (12, 13): 6, (12, 14): 3, (13, 10): 3, (13, 14): 3, (14, 10): 2, (14, 11): 0} where age at dest is {(10, 11): 6, (10, 12): 3, (11, 12): 5, (11, 13): 3, (12, 13): 7, (12, 14): 4, (13, 10): 5, (13, 14): 5, (14, 10): 4, (14, 11): 2}, age at UAV is {10: 3, 11: 1, 12: 1, 13: 2, 14: 2}
+mad_age_dest = {(10, 11): 3, (10, 12): 0, (11, 12): 4, (11, 13): 2, (12, 13): 6, (12, 14): 3, (13, 10): 3, (13, 14): 3, (14, 10): 2, (14, 11): 0}
+updated_users = [[12, 13], [11, 12]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 3, 11: 1, 12: 1, 13: 2, 14: 2} when the general UAV age was {10: 3, 11: 1, 12: 1, 13: 2, 14: 2}
+users sampled under UAV 0 are [10, 13]
+sampled_users = [10, 13]
+updated_users are [[11, 12], [12, 13]], sampled_users = [10, 13], mad_action = [([10, 13], [[12, 13], [11, 12]])], actual_mad_action = 108
+
+
+current episode = 2
+
+
+ step = 10, mad selection is 108, actual action is [(10, 13), ([11, 12], [12, 13])], updated_users = [[11, 12], [12, 13]], sampled_users = [10, 13]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+for pair [11, 12], chance_update_loss = 0.02 and eval_env.update_loss = -1 
+pair [11, 12] was selected to be updated. so pair [11, 12]'s age at dest will become 11's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [11, 13]  was not updated
+for pair [12, 13], chance_update_loss = 0.23 and eval_env.update_loss = -1 
+pair [12, 13] was selected to be updated. so pair [12, 13]'s age at dest will become 12's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+ for user 10, chance_sample_loss = 0.57 and eval_env.sample_loss = -1 
+slot =  9  - user  10  period =  1  was selected to sample and sampled
+user  11  was not sampled
+user  12  was not sampled
+ for user 13, chance_sample_loss = 0.51 and eval_env.sample_loss = -1 
+slot =  9  - user  13  period =  1  was selected to sample and sampled
+user  14  was not sampled
+time = 10, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4, 7, 10], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5, 7, 9], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3, 6, 9], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5, 8, 10], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4, 6, 8]}
+tx_attempt_UAV has become {10: [4], 11: [5], 12: [3], 13: [4], 14: [4]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [3], (11, 12): [3], (11, 13): [2], (12, 13): [2], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [2], (14, 11): [2]}
+
+ step = 10 of episode 2 ended, UAV_age = {10: 1, 11: 2, 12: 2, 13: 1, 14: 3}, dest_age = {(10, 11): 7, (10, 12): 4, (11, 12): 2, (11, 13): 4, (12, 13): 2, (12, 14): 5, (13, 10): 6, (13, 14): 6, (14, 10): 5, (14, 11): 3} with sum = 44, tx_attempt_UAV = {10: [4], 11: [5], 12: [3], 13: [4], 14: [4]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [3], (11, 12): [3], (11, 13): [2], (12, 13): [2], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [2], (14, 11): [2]}
+episode_wise_attempt_sample = 20
+episode_wise_success_sample = 20
+episode_wise_attempt_update = 18
+episode_wise_success_update = 18
+age_dist_UAV = {10: [1, 1, 1], 11: [3, 2, 2], 12: [2, 2, 2], 13: [1, 1, 1], 14: [2, 3, 3]}, age_dist_dest = {(10, 11): [4, 3, 7], (10, 12): [6, 3, 4], (11, 12): [3, 6, 2], (11, 13): [6, 2, 4], (12, 13): [2, 5, 2], (12, 14): [5, 2, 5], (13, 10): [5, 7, 6], (13, 14): [3, 4, 6], (14, 10): [4, 5, 5], (14, 11): [4, 5, 3]}
+results for step 10 of episode 2
+attempt_sample = [20, 20, 20]
+success_sample = [20, 20, 20]
+attempt_update = [18, 18, 18]
+success_update = [18, 18, 18]
+
+*****************************************************
+
+
+
+tx_rx_pairs = [[10, 11], [10, 12], [11, 12], [11, 13], [12, 13], [12, 14], [13, 10], [13, 14], [14, 10], [14, 11]] with length 10 and tx_users = [10, 11, 12, 13, 14] with length 5
+user list = [10, 11, 12, 13, 14]
+UAV list  = [0]
+self.n_users = 5, self.n_UAVs = 1, self.act_coverage = {0: [10, 11, 12, 13, 14]}, self.update_loss = {(10, 11): -1, (10, 12): -1, (11, 12): -1, (11, 13): -1, (12, 13): -1, (12, 14): -1, (13, 10): -1, (13, 14): -1, (14, 10): -1, (14, 11): -1}, self.sample_loss = {10: -1, 11: -1, 12: -1, 13: -1, 14: -1}, self.UAV_list = [0], self.user_list = [10, 11, 12, 13, 14]
+
+eval_net has a action_space of size  (450, 2, 2)
+
+eval_net started and age_dist_UAV = {10: [], 11: [], 12: [], 13: [], 14: []}, age_dist_dest = {(10, 11): [], (10, 12): [], (11, 12): [], (11, 13): [], (12, 13): [], (12, 14): [], (13, 10): [], (13, 14): [], (14, 10): [], (14, 11): []}, tx_attempt_dest = {(10, 11): [], (10, 12): [], (11, 12): [], (11, 13): [], (12, 13): [], (12, 14): [], (13, 10): [], (13, 14): [], (14, 10): [], (14, 11): []}, tx_attempt_UAV = {10: [], 11: [], 12: [], 13: [], 14: []}
+
+
+eval_net after reset, episode 1 begins with self._state = [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1] with shape (16,) when CSI_as_state = False and sample_error_in_CSI = False
+
+age difference of users at dest is {(10, 11): 0, (10, 12): 0, (11, 12): 0, (11, 13): 0, (12, 13): 0, (12, 14): 0, (13, 10): 0, (13, 14): 0, (14, 10): 0, (14, 11): 0} where age at dest is {(10, 11): 1, (10, 12): 1, (11, 12): 1, (11, 13): 1, (12, 13): 1, (12, 14): 1, (13, 10): 1, (13, 14): 1, (14, 10): 1, (14, 11): 1}, age at UAV is {10: 1, 11: 1, 12: 1, 13: 1, 14: 1}
+mad_age_dest = {(10, 11): 0, (10, 12): 0, (11, 12): 0, (11, 13): 0, (12, 13): 0, (12, 14): 0, (13, 10): 0, (13, 14): 0, (14, 10): 0, (14, 11): 0}
+updated_users = [[13, 10], [14, 10]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 1, 12: 1, 13: 1, 14: 1} when the general UAV age was {10: 1, 11: 1, 12: 1, 13: 1, 14: 1}
+users sampled under UAV 0 are [14, 11]
+sampled_users = [14, 11]
+updated_users are [[13, 10], [14, 10]], sampled_users = [11, 14], mad_action = [([14, 11], [[13, 10], [14, 10]])], actual_mad_action = 310
+
+
+current episode = 3
+
+
+ step = 1, mad selection is 310, actual action is [(11, 14), ([13, 10], [14, 10])], updated_users = [[13, 10], [14, 10]], sampled_users = [11, 14]
+user  10  was not sampled
+ for user 11, chance_sample_loss = 0.17 and eval_env.sample_loss = -1 
+slot =  0  - user  11  period =  1  was selected to sample and sampled
+user  12  was not sampled
+user  13  was not sampled
+ for user 14, chance_sample_loss = 0.48 and eval_env.sample_loss = -1 
+slot =  0  - user  14  period =  1  was selected to sample and sampled
+time = 1, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4, 7, 10], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5, 7, 9, 1], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3, 6, 9], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5, 8, 10], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4, 6, 8, 1]}
+tx_attempt_UAV has become {10: [0], 11: [1], 12: [0], 13: [0], 14: [1]} and tx_attempt_dest has become {(10, 11): [0], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [0], (14, 11): [0]}
+
+ step = 1 of episode 3 ended, UAV_age = {10: 2, 11: 1, 12: 2, 13: 2, 14: 1}, dest_age = {(10, 11): 2, (10, 12): 2, (11, 12): 2, (11, 13): 2, (12, 13): 2, (12, 14): 2, (13, 10): 2, (13, 14): 2, (14, 10): 2, (14, 11): 2} with sum = 20, tx_attempt_UAV = {10: [0], 11: [1], 12: [0], 13: [0], 14: [1]}, tx_attempt_dest = {(10, 11): [0], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [0], (14, 11): [0]}
+episode_wise_attempt_sample = 2
+episode_wise_success_sample = 2
+episode_wise_attempt_update = 0
+episode_wise_success_update = 0
+age difference of users at dest is {(10, 11): 0, (10, 12): 0, (11, 12): 1, (11, 13): 1, (12, 13): 0, (12, 14): 0, (13, 10): 0, (13, 14): 0, (14, 10): 1, (14, 11): 1} where age at dest is {(10, 11): 2, (10, 12): 2, (11, 12): 2, (11, 13): 2, (12, 13): 2, (12, 14): 2, (13, 10): 2, (13, 14): 2, (14, 10): 2, (14, 11): 2}, age at UAV is {10: 2, 11: 1, 12: 2, 13: 2, 14: 1}
+mad_age_dest = {(10, 11): 0, (10, 12): 0, (11, 12): 1, (11, 13): 1, (12, 13): 0, (12, 14): 0, (13, 10): 0, (13, 14): 0, (14, 10): 1, (14, 11): 1}
+updated_users = [[14, 10], [14, 11]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 2, 11: 1, 12: 2, 13: 2, 14: 1} when the general UAV age was {10: 2, 11: 1, 12: 2, 13: 2, 14: 1}
+users sampled under UAV 0 are [13, 10]
+sampled_users = [13, 10]
+updated_users are [[14, 10], [14, 11]], sampled_users = [10, 13], mad_action = [([13, 10], [[14, 10], [14, 11]])], actual_mad_action = 134
+
+
+current episode = 3
+
+
+ step = 2, mad selection is 134, actual action is [(10, 13), ([14, 10], [14, 11])], updated_users = [[14, 10], [14, 11]], sampled_users = [10, 13]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+for pair [14, 10], chance_update_loss = 0.29 and eval_env.update_loss = -1 
+pair [14, 10] was selected to be updated. so pair [14, 10]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+for pair [14, 11], chance_update_loss = 0.35 and eval_env.update_loss = -1 
+pair [14, 11] was selected to be updated. so pair [14, 11]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+ for user 10, chance_sample_loss = 0.47 and eval_env.sample_loss = -1 
+slot =  1  - user  10  period =  1  was selected to sample and sampled
+user  11  was not sampled
+user  12  was not sampled
+ for user 13, chance_sample_loss = 0.57 and eval_env.sample_loss = -1 
+slot =  1  - user  13  period =  1  was selected to sample and sampled
+user  14  was not sampled
+time = 2, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4, 7, 10, 2], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5, 7, 9, 1], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3, 6, 9], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5, 8, 10, 2], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4, 6, 8, 1]}
+tx_attempt_UAV has become {10: [1], 11: [1], 12: [0], 13: [1], 14: [1]} and tx_attempt_dest has become {(10, 11): [0], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+
+ step = 2 of episode 3 ended, UAV_age = {10: 1, 11: 2, 12: 3, 13: 1, 14: 2}, dest_age = {(10, 11): 3, (10, 12): 3, (11, 12): 3, (11, 13): 3, (12, 13): 3, (12, 14): 3, (13, 10): 3, (13, 14): 3, (14, 10): 2, (14, 11): 2} with sum = 28, tx_attempt_UAV = {10: [1], 11: [1], 12: [0], 13: [1], 14: [1]}, tx_attempt_dest = {(10, 11): [0], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [0], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+episode_wise_attempt_sample = 4
+episode_wise_success_sample = 4
+episode_wise_attempt_update = 2
+episode_wise_success_update = 2
+age difference of users at dest is {(10, 11): 2, (10, 12): 2, (11, 12): 1, (11, 13): 1, (12, 13): 0, (12, 14): 0, (13, 10): 2, (13, 14): 2, (14, 10): 0, (14, 11): 0} where age at dest is {(10, 11): 3, (10, 12): 3, (11, 12): 3, (11, 13): 3, (12, 13): 3, (12, 14): 3, (13, 10): 3, (13, 14): 3, (14, 10): 2, (14, 11): 2}, age at UAV is {10: 1, 11: 2, 12: 3, 13: 1, 14: 2}
+mad_age_dest = {(10, 11): 2, (10, 12): 2, (11, 12): 1, (11, 13): 1, (12, 13): 0, (12, 14): 0, (13, 10): 2, (13, 14): 2, (14, 10): 0, (14, 11): 0}
+updated_users = [[13, 10], [10, 11]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 2, 12: 3, 13: 1, 14: 2} when the general UAV age was {10: 1, 11: 2, 12: 3, 13: 1, 14: 2}
+users sampled under UAV 0 are [12, 11]
+sampled_users = [12, 11]
+updated_users are [[10, 11], [13, 10]], sampled_users = [11, 12], mad_action = [([12, 11], [[13, 10], [10, 11]])], actual_mad_action = 185
+
+
+current episode = 3
+
+
+ step = 3, mad selection is 185, actual action is [(11, 12), ([10, 11], [13, 10])], updated_users = [[10, 11], [13, 10]], sampled_users = [11, 12]
+for pair [10, 11], chance_update_loss = 0.64 and eval_env.update_loss = -1 
+pair [10, 11] was selected to be updated. so pair [10, 11]'s age at dest will become 10's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+for pair [13, 10], chance_update_loss = 0.95 and eval_env.update_loss = -1 
+pair [13, 10] was selected to be updated. so pair [13, 10]'s age at dest will become 13's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+user  10  was not sampled
+ for user 11, chance_sample_loss = 0.38 and eval_env.sample_loss = -1 
+slot =  2  - user  11  period =  1  was selected to sample and sampled
+ for user 12, chance_sample_loss = 0.97 and eval_env.sample_loss = -1 
+slot =  2  - user  12  period =  1  was selected to sample and sampled
+user  13  was not sampled
+user  14  was not sampled
+time = 3, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4, 7, 10, 2], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3, 6, 9, 3], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5, 8, 10, 2], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4, 6, 8, 1]}
+tx_attempt_UAV has become {10: [1], 11: [2], 12: [1], 13: [1], 14: [1]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [1], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+
+ step = 3 of episode 3 ended, UAV_age = {10: 2, 11: 1, 12: 1, 13: 2, 14: 3}, dest_age = {(10, 11): 2, (10, 12): 4, (11, 12): 4, (11, 13): 4, (12, 13): 4, (12, 14): 4, (13, 10): 2, (13, 14): 4, (14, 10): 3, (14, 11): 3} with sum = 34, tx_attempt_UAV = {10: [1], 11: [2], 12: [1], 13: [1], 14: [1]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [0], (11, 12): [0], (11, 13): [0], (12, 13): [0], (12, 14): [0], (13, 10): [1], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+episode_wise_attempt_sample = 6
+episode_wise_success_sample = 6
+episode_wise_attempt_update = 4
+episode_wise_success_update = 4
+age difference of users at dest is {(10, 11): 0, (10, 12): 2, (11, 12): 3, (11, 13): 3, (12, 13): 3, (12, 14): 3, (13, 10): 0, (13, 14): 2, (14, 10): 0, (14, 11): 0} where age at dest is {(10, 11): 2, (10, 12): 4, (11, 12): 4, (11, 13): 4, (12, 13): 4, (12, 14): 4, (13, 10): 2, (13, 14): 4, (14, 10): 3, (14, 11): 3}, age at UAV is {10: 2, 11: 1, 12: 1, 13: 2, 14: 3}
+mad_age_dest = {(10, 11): 0, (10, 12): 2, (11, 12): 3, (11, 13): 3, (12, 13): 3, (12, 14): 3, (13, 10): 0, (13, 14): 2, (14, 10): 0, (14, 11): 0}
+updated_users = [[11, 12], [12, 14]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 2, 11: 1, 12: 1, 13: 2, 14: 3} when the general UAV age was {10: 2, 11: 1, 12: 1, 13: 2, 14: 3}
+users sampled under UAV 0 are [14, 10]
+sampled_users = [14, 10]
+updated_users are [[11, 12], [12, 14]], sampled_users = [10, 14], mad_action = [([14, 10], [[11, 12], [12, 14]])], actual_mad_action = 154
+
+
+current episode = 3
+
+
+ step = 4, mad selection is 154, actual action is [(10, 14), ([11, 12], [12, 14])], updated_users = [[11, 12], [12, 14]], sampled_users = [10, 14]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+for pair [11, 12], chance_update_loss = 0.38 and eval_env.update_loss = -1 
+pair [11, 12] was selected to be updated. so pair [11, 12]'s age at dest will become 11's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+for pair [12, 14], chance_update_loss = 0.5 and eval_env.update_loss = -1 
+pair [12, 14] was selected to be updated. so pair [12, 14]'s age at dest will become 12's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+ for user 10, chance_sample_loss = 0.91 and eval_env.sample_loss = -1 
+slot =  3  - user  10  period =  1  was selected to sample and sampled
+user  11  was not sampled
+user  12  was not sampled
+user  13  was not sampled
+ for user 14, chance_sample_loss = 0.07 and eval_env.sample_loss = -1 
+slot =  3  - user  14  period =  1  was selected to sample and sampled
+time = 4, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4, 7, 10, 2, 4], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3, 6, 9, 3], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5, 8, 10, 2], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4, 6, 8, 1, 4]}
+tx_attempt_UAV has become {10: [2], 11: [2], 12: [1], 13: [1], 14: [2]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [0], (11, 12): [1], (11, 13): [0], (12, 13): [0], (12, 14): [1], (13, 10): [1], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+
+ step = 4 of episode 3 ended, UAV_age = {10: 1, 11: 2, 12: 2, 13: 3, 14: 1}, dest_age = {(10, 11): 3, (10, 12): 5, (11, 12): 2, (11, 13): 5, (12, 13): 5, (12, 14): 2, (13, 10): 3, (13, 14): 5, (14, 10): 4, (14, 11): 4} with sum = 38, tx_attempt_UAV = {10: [2], 11: [2], 12: [1], 13: [1], 14: [2]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [0], (11, 12): [1], (11, 13): [0], (12, 13): [0], (12, 14): [1], (13, 10): [1], (13, 14): [0], (14, 10): [1], (14, 11): [1]}
+episode_wise_attempt_sample = 8
+episode_wise_success_sample = 8
+episode_wise_attempt_update = 6
+episode_wise_success_update = 6
+age difference of users at dest is {(10, 11): 2, (10, 12): 4, (11, 12): 0, (11, 13): 3, (12, 13): 3, (12, 14): 0, (13, 10): 0, (13, 14): 2, (14, 10): 3, (14, 11): 3} where age at dest is {(10, 11): 3, (10, 12): 5, (11, 12): 2, (11, 13): 5, (12, 13): 5, (12, 14): 2, (13, 10): 3, (13, 14): 5, (14, 10): 4, (14, 11): 4}, age at UAV is {10: 1, 11: 2, 12: 2, 13: 3, 14: 1}
+mad_age_dest = {(10, 11): 2, (10, 12): 4, (11, 12): 0, (11, 13): 3, (12, 13): 3, (12, 14): 0, (13, 10): 0, (13, 14): 2, (14, 10): 3, (14, 11): 3}
+updated_users = [[10, 12], [14, 11]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 2, 12: 2, 13: 3, 14: 1} when the general UAV age was {10: 1, 11: 2, 12: 2, 13: 3, 14: 1}
+users sampled under UAV 0 are [13, 12]
+sampled_users = [13, 12]
+updated_users are [[10, 12], [14, 11]], sampled_users = [12, 13], mad_action = [([13, 12], [[10, 12], [14, 11]])], actual_mad_action = 331
+
+
+current episode = 3
+
+
+ step = 5, mad selection is 331, actual action is [(12, 13), ([10, 12], [14, 11])], updated_users = [[10, 12], [14, 11]], sampled_users = [12, 13]
+pair  [10, 11]  was not updated
+for pair [10, 12], chance_update_loss = 0.25 and eval_env.update_loss = -1 
+pair [10, 12] was selected to be updated. so pair [10, 12]'s age at dest will become 10's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+for pair [14, 11], chance_update_loss = 0.86 and eval_env.update_loss = -1 
+pair [14, 11] was selected to be updated. so pair [14, 11]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+user  10  was not sampled
+user  11  was not sampled
+ for user 12, chance_sample_loss = 0.11 and eval_env.sample_loss = -1 
+slot =  4  - user  12  period =  1  was selected to sample and sampled
+ for user 13, chance_sample_loss = 0.48 and eval_env.sample_loss = -1 
+slot =  4  - user  13  period =  1  was selected to sample and sampled
+user  14  was not sampled
+time = 5, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4, 7, 10, 2, 4], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3, 6, 9, 3, 5], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5, 8, 10, 2, 5], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4, 6, 8, 1, 4]}
+tx_attempt_UAV has become {10: [2], 11: [2], 12: [2], 13: [2], 14: [2]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [0], (12, 13): [0], (12, 14): [1], (13, 10): [1], (13, 14): [0], (14, 10): [1], (14, 11): [2]}
+
+ step = 5 of episode 3 ended, UAV_age = {10: 2, 11: 3, 12: 1, 13: 1, 14: 2}, dest_age = {(10, 11): 4, (10, 12): 2, (11, 12): 3, (11, 13): 6, (12, 13): 6, (12, 14): 3, (13, 10): 4, (13, 14): 6, (14, 10): 5, (14, 11): 2} with sum = 41, tx_attempt_UAV = {10: [2], 11: [2], 12: [2], 13: [2], 14: [2]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [0], (12, 13): [0], (12, 14): [1], (13, 10): [1], (13, 14): [0], (14, 10): [1], (14, 11): [2]}
+episode_wise_attempt_sample = 10
+episode_wise_success_sample = 10
+episode_wise_attempt_update = 8
+episode_wise_success_update = 8
+age difference of users at dest is {(10, 11): 2, (10, 12): 0, (11, 12): 0, (11, 13): 3, (12, 13): 5, (12, 14): 2, (13, 10): 3, (13, 14): 5, (14, 10): 3, (14, 11): 0} where age at dest is {(10, 11): 4, (10, 12): 2, (11, 12): 3, (11, 13): 6, (12, 13): 6, (12, 14): 3, (13, 10): 4, (13, 14): 6, (14, 10): 5, (14, 11): 2}, age at UAV is {10: 2, 11: 3, 12: 1, 13: 1, 14: 2}
+mad_age_dest = {(10, 11): 2, (10, 12): 0, (11, 12): 0, (11, 13): 3, (12, 13): 5, (12, 14): 2, (13, 10): 3, (13, 14): 5, (14, 10): 3, (14, 11): 0}
+updated_users = [[12, 13], [13, 14]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 2, 11: 3, 12: 1, 13: 1, 14: 2} when the general UAV age was {10: 2, 11: 3, 12: 1, 13: 1, 14: 2}
+users sampled under UAV 0 are [11, 14]
+sampled_users = [11, 14]
+updated_users are [[12, 13], [13, 14]], sampled_users = [11, 14], mad_action = [([11, 14], [[12, 13], [13, 14]])], actual_mad_action = 302
+
+
+current episode = 3
+
+
+ step = 6, mad selection is 302, actual action is [(11, 14), ([12, 13], [13, 14])], updated_users = [[12, 13], [13, 14]], sampled_users = [11, 14]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+for pair [12, 13], chance_update_loss = 0.13 and eval_env.update_loss = -1 
+pair [12, 13] was selected to be updated. so pair [12, 13]'s age at dest will become 12's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+for pair [13, 14], chance_update_loss = 0.14 and eval_env.update_loss = -1 
+pair [13, 14] was selected to be updated. so pair [13, 14]'s age at dest will become 13's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+user  10  was not sampled
+ for user 11, chance_sample_loss = 0.4 and eval_env.sample_loss = -1 
+slot =  5  - user  11  period =  1  was selected to sample and sampled
+user  12  was not sampled
+user  13  was not sampled
+ for user 14, chance_sample_loss = 0.9 and eval_env.sample_loss = -1 
+slot =  5  - user  14  period =  1  was selected to sample and sampled
+time = 6, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4, 7, 10, 2, 4], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 6], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3, 6, 9, 3, 5], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5, 8, 10, 2, 5], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4, 6, 8, 1, 4, 6]}
+tx_attempt_UAV has become {10: [2], 11: [3], 12: [2], 13: [2], 14: [3]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [0], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [1], (14, 11): [2]}
+
+ step = 6 of episode 3 ended, UAV_age = {10: 3, 11: 1, 12: 2, 13: 2, 14: 1}, dest_age = {(10, 11): 5, (10, 12): 3, (11, 12): 4, (11, 13): 7, (12, 13): 2, (12, 14): 4, (13, 10): 5, (13, 14): 2, (14, 10): 6, (14, 11): 3} with sum = 41, tx_attempt_UAV = {10: [2], 11: [3], 12: [2], 13: [2], 14: [3]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [0], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [1], (14, 11): [2]}
+episode_wise_attempt_sample = 12
+episode_wise_success_sample = 12
+episode_wise_attempt_update = 10
+episode_wise_success_update = 10
+age difference of users at dest is {(10, 11): 2, (10, 12): 0, (11, 12): 3, (11, 13): 6, (12, 13): 0, (12, 14): 2, (13, 10): 3, (13, 14): 0, (14, 10): 5, (14, 11): 2} where age at dest is {(10, 11): 5, (10, 12): 3, (11, 12): 4, (11, 13): 7, (12, 13): 2, (12, 14): 4, (13, 10): 5, (13, 14): 2, (14, 10): 6, (14, 11): 3}, age at UAV is {10: 3, 11: 1, 12: 2, 13: 2, 14: 1}
+mad_age_dest = {(10, 11): 2, (10, 12): 0, (11, 12): 3, (11, 13): 6, (12, 13): 0, (12, 14): 2, (13, 10): 3, (13, 14): 0, (14, 10): 5, (14, 11): 2}
+updated_users = [[11, 13], [14, 10]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 3, 11: 1, 12: 2, 13: 2, 14: 1} when the general UAV age was {10: 3, 11: 1, 12: 2, 13: 2, 14: 1}
+users sampled under UAV 0 are [10, 12]
+sampled_users = [10, 12]
+updated_users are [[11, 13], [14, 10]], sampled_users = [10, 12], mad_action = [([10, 12], [[11, 13], [14, 10]])], actual_mad_action = 73
+
+
+current episode = 3
+
+
+ step = 7, mad selection is 73, actual action is [(10, 12), ([11, 13], [14, 10])], updated_users = [[11, 13], [14, 10]], sampled_users = [10, 12]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+for pair [11, 13], chance_update_loss = 0.13 and eval_env.update_loss = -1 
+pair [11, 13] was selected to be updated. so pair [11, 13]'s age at dest will become 11's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+for pair [14, 10], chance_update_loss = 0.92 and eval_env.update_loss = -1 
+pair [14, 10] was selected to be updated. so pair [14, 10]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [14, 11]  was not updated
+ for user 10, chance_sample_loss = 0.19 and eval_env.sample_loss = -1 
+slot =  6  - user  10  period =  1  was selected to sample and sampled
+user  11  was not sampled
+ for user 12, chance_sample_loss = 0.08 and eval_env.sample_loss = -1 
+slot =  6  - user  12  period =  1  was selected to sample and sampled
+user  13  was not sampled
+user  14  was not sampled
+time = 7, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4, 7, 10, 2, 4, 7], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 6], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3, 6, 9, 3, 5, 7], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5, 8, 10, 2, 5], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4, 6, 8, 1, 4, 6]}
+tx_attempt_UAV has become {10: [3], 11: [3], 12: [3], 13: [2], 14: [3]} and tx_attempt_dest has become {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [2], (14, 11): [2]}
+
+ step = 7 of episode 3 ended, UAV_age = {10: 1, 11: 2, 12: 1, 13: 3, 14: 2}, dest_age = {(10, 11): 6, (10, 12): 4, (11, 12): 5, (11, 13): 2, (12, 13): 3, (12, 14): 5, (13, 10): 6, (13, 14): 3, (14, 10): 2, (14, 11): 4} with sum = 40, tx_attempt_UAV = {10: [3], 11: [3], 12: [3], 13: [2], 14: [3]}, tx_attempt_dest = {(10, 11): [1], (10, 12): [1], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [1], (13, 10): [1], (13, 14): [1], (14, 10): [2], (14, 11): [2]}
+episode_wise_attempt_sample = 14
+episode_wise_success_sample = 14
+episode_wise_attempt_update = 12
+episode_wise_success_update = 12
+age difference of users at dest is {(10, 11): 5, (10, 12): 3, (11, 12): 3, (11, 13): 0, (12, 13): 2, (12, 14): 4, (13, 10): 3, (13, 14): 0, (14, 10): 0, (14, 11): 2} where age at dest is {(10, 11): 6, (10, 12): 4, (11, 12): 5, (11, 13): 2, (12, 13): 3, (12, 14): 5, (13, 10): 6, (13, 14): 3, (14, 10): 2, (14, 11): 4}, age at UAV is {10: 1, 11: 2, 12: 1, 13: 3, 14: 2}
+mad_age_dest = {(10, 11): 5, (10, 12): 3, (11, 12): 3, (11, 13): 0, (12, 13): 2, (12, 14): 4, (13, 10): 3, (13, 14): 0, (14, 10): 0, (14, 11): 2}
+updated_users = [[10, 11], [12, 14]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 2, 12: 1, 13: 3, 14: 2} when the general UAV age was {10: 1, 11: 2, 12: 1, 13: 3, 14: 2}
+users sampled under UAV 0 are [13, 14]
+sampled_users = [13, 14]
+updated_users are [[10, 11], [12, 14]], sampled_users = [13, 14], mad_action = [([13, 14], [[10, 11], [12, 14]])], actual_mad_action = 409
+
+
+current episode = 3
+
+
+ step = 8, mad selection is 409, actual action is [(13, 14), ([10, 11], [12, 14])], updated_users = [[10, 11], [12, 14]], sampled_users = [13, 14]
+for pair [10, 11], chance_update_loss = 0.56 and eval_env.update_loss = -1 
+pair [10, 11] was selected to be updated. so pair [10, 11]'s age at dest will become 10's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+for pair [12, 14], chance_update_loss = 0.86 and eval_env.update_loss = -1 
+pair [12, 14] was selected to be updated. so pair [12, 14]'s age at dest will become 12's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+user  10  was not sampled
+user  11  was not sampled
+user  12  was not sampled
+ for user 13, chance_sample_loss = 0.65 and eval_env.sample_loss = -1 
+slot =  7  - user  13  period =  1  was selected to sample and sampled
+ for user 14, chance_sample_loss = 0.64 and eval_env.sample_loss = -1 
+slot =  7  - user  14  period =  1  was selected to sample and sampled
+time = 8, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4, 7, 10, 2, 4, 7], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 6], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3, 6, 9, 3, 5, 7], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5, 8, 10, 2, 5, 8], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4, 6, 8, 1, 4, 6, 8]}
+tx_attempt_UAV has become {10: [3], 11: [3], 12: [3], 13: [3], 14: [4]} and tx_attempt_dest has become {(10, 11): [2], (10, 12): [1], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [2], (13, 10): [1], (13, 14): [1], (14, 10): [2], (14, 11): [2]}
+
+ step = 8 of episode 3 ended, UAV_age = {10: 2, 11: 3, 12: 2, 13: 1, 14: 1}, dest_age = {(10, 11): 2, (10, 12): 5, (11, 12): 6, (11, 13): 3, (12, 13): 4, (12, 14): 2, (13, 10): 7, (13, 14): 4, (14, 10): 3, (14, 11): 5} with sum = 41, tx_attempt_UAV = {10: [3], 11: [3], 12: [3], 13: [3], 14: [4]}, tx_attempt_dest = {(10, 11): [2], (10, 12): [1], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [2], (13, 10): [1], (13, 14): [1], (14, 10): [2], (14, 11): [2]}
+episode_wise_attempt_sample = 16
+episode_wise_success_sample = 16
+episode_wise_attempt_update = 14
+episode_wise_success_update = 14
+age difference of users at dest is {(10, 11): 0, (10, 12): 3, (11, 12): 3, (11, 13): 0, (12, 13): 2, (12, 14): 0, (13, 10): 6, (13, 14): 3, (14, 10): 2, (14, 11): 4} where age at dest is {(10, 11): 2, (10, 12): 5, (11, 12): 6, (11, 13): 3, (12, 13): 4, (12, 14): 2, (13, 10): 7, (13, 14): 4, (14, 10): 3, (14, 11): 5}, age at UAV is {10: 2, 11: 3, 12: 2, 13: 1, 14: 1}
+mad_age_dest = {(10, 11): 0, (10, 12): 3, (11, 12): 3, (11, 13): 0, (12, 13): 2, (12, 14): 0, (13, 10): 6, (13, 14): 3, (14, 10): 2, (14, 11): 4}
+updated_users = [[13, 10], [14, 11]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 2, 11: 3, 12: 2, 13: 1, 14: 1} when the general UAV age was {10: 2, 11: 3, 12: 2, 13: 1, 14: 1}
+users sampled under UAV 0 are [11, 10]
+sampled_users = [11, 10]
+updated_users are [[13, 10], [14, 11]], sampled_users = [10, 11], mad_action = [([11, 10], [[13, 10], [14, 11]])], actual_mad_action = 41
+
+
+current episode = 3
+
+
+ step = 9, mad selection is 41, actual action is [(10, 11), ([13, 10], [14, 11])], updated_users = [[13, 10], [14, 11]], sampled_users = [10, 11]
+pair  [10, 11]  was not updated
+pair  [10, 12]  was not updated
+pair  [11, 12]  was not updated
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+for pair [13, 10], chance_update_loss = 0.6 and eval_env.update_loss = -1 
+pair [13, 10] was selected to be updated. so pair [13, 10]'s age at dest will become 13's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+for pair [14, 11], chance_update_loss = 0.9 and eval_env.update_loss = -1 
+pair [14, 11] was selected to be updated. so pair [14, 11]'s age at dest will become 14's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+ for user 10, chance_sample_loss = 0.48 and eval_env.sample_loss = -1 
+slot =  8  - user  10  period =  1  was selected to sample and sampled
+ for user 11, chance_sample_loss = 0.72 and eval_env.sample_loss = -1 
+slot =  8  - user  11  period =  1  was selected to sample and sampled
+user  12  was not sampled
+user  13  was not sampled
+user  14  was not sampled
+time = 9, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4, 7, 10, 2, 4, 7, 9], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 6, 9], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3, 6, 9, 3, 5, 7], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5, 8, 10, 2, 5, 8], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4, 6, 8, 1, 4, 6, 8]}
+tx_attempt_UAV has become {10: [4], 11: [4], 12: [3], 13: [3], 14: [4]} and tx_attempt_dest has become {(10, 11): [2], (10, 12): [1], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [2], (13, 10): [2], (13, 14): [1], (14, 10): [2], (14, 11): [3]}
+
+ step = 9 of episode 3 ended, UAV_age = {10: 1, 11: 1, 12: 3, 13: 2, 14: 2}, dest_age = {(10, 11): 3, (10, 12): 6, (11, 12): 7, (11, 13): 4, (12, 13): 5, (12, 14): 3, (13, 10): 2, (13, 14): 5, (14, 10): 4, (14, 11): 2} with sum = 41, tx_attempt_UAV = {10: [4], 11: [4], 12: [3], 13: [3], 14: [4]}, tx_attempt_dest = {(10, 11): [2], (10, 12): [1], (11, 12): [1], (11, 13): [1], (12, 13): [1], (12, 14): [2], (13, 10): [2], (13, 14): [1], (14, 10): [2], (14, 11): [3]}
+episode_wise_attempt_sample = 18
+episode_wise_success_sample = 18
+episode_wise_attempt_update = 16
+episode_wise_success_update = 16
+age difference of users at dest is {(10, 11): 2, (10, 12): 5, (11, 12): 6, (11, 13): 3, (12, 13): 2, (12, 14): 0, (13, 10): 0, (13, 14): 3, (14, 10): 2, (14, 11): 0} where age at dest is {(10, 11): 3, (10, 12): 6, (11, 12): 7, (11, 13): 4, (12, 13): 5, (12, 14): 3, (13, 10): 2, (13, 14): 5, (14, 10): 4, (14, 11): 2}, age at UAV is {10: 1, 11: 1, 12: 3, 13: 2, 14: 2}
+mad_age_dest = {(10, 11): 2, (10, 12): 5, (11, 12): 6, (11, 13): 3, (12, 13): 2, (12, 14): 0, (13, 10): 0, (13, 14): 3, (14, 10): 2, (14, 11): 0}
+updated_users = [[11, 12], [10, 12]]
+under UAV 0, users covered are [10, 11, 12, 13, 14] and their ages are {10: 1, 11: 1, 12: 3, 13: 2, 14: 2} when the general UAV age was {10: 1, 11: 1, 12: 3, 13: 2, 14: 2}
+users sampled under UAV 0 are [12, 13]
+sampled_users = [12, 13]
+updated_users are [[10, 12], [11, 12]], sampled_users = [12, 13], mad_action = [([12, 13], [[11, 12], [10, 12]])], actual_mad_action = 324
+
+
+current episode = 3
+
+
+ step = 10, mad selection is 324, actual action is [(12, 13), ([10, 12], [11, 12])], updated_users = [[10, 12], [11, 12]], sampled_users = [12, 13]
+pair  [10, 11]  was not updated
+for pair [10, 12], chance_update_loss = 0.81 and eval_env.update_loss = -1 
+pair [10, 12] was selected to be updated. so pair [10, 12]'s age at dest will become 10's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+for pair [11, 12], chance_update_loss = 0.24 and eval_env.update_loss = -1 
+pair [11, 12] was selected to be updated. so pair [11, 12]'s age at dest will become 11's age at the UAV +1, i.e. eval_env.UAV_age[i[0]]+1=2
+pair  [11, 13]  was not updated
+pair  [12, 13]  was not updated
+pair  [12, 14]  was not updated
+pair  [13, 10]  was not updated
+pair  [13, 14]  was not updated
+pair  [14, 10]  was not updated
+pair  [14, 11]  was not updated
+user  10  was not sampled
+user  11  was not sampled
+ for user 12, chance_sample_loss = 0.21 and eval_env.sample_loss = -1 
+slot =  9  - user  12  period =  1  was selected to sample and sampled
+ for user 13, chance_sample_loss = 0.84 and eval_env.sample_loss = -1 
+slot =  9  - user  13  period =  1  was selected to sample and sampled
+user  14  was not sampled
+time = 10, sample_time = {10: [3, 5, 7, 10, 3, 5, 8, 10, 1, 4, 7, 10, 2, 4, 7, 9], 11: [2, 5, 8, 2, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 6, 9], 12: [2, 4, 6, 9, 2, 4, 6, 9, 3, 6, 9, 3, 5, 7, 10], 13: [1, 3, 6, 8, 10, 1, 4, 7, 10, 2, 5, 8, 10, 2, 5, 8, 10], 14: [1, 4, 7, 9, 1, 3, 6, 8, 2, 4, 6, 8, 1, 4, 6, 8]}
+tx_attempt_UAV has become {10: [4], 11: [4], 12: [4], 13: [4], 14: [4]} and tx_attempt_dest has become {(10, 11): [2], (10, 12): [2], (11, 12): [2], (11, 13): [1], (12, 13): [1], (12, 14): [2], (13, 10): [2], (13, 14): [1], (14, 10): [2], (14, 11): [3]}
+
+ step = 10 of episode 3 ended, UAV_age = {10: 2, 11: 2, 12: 1, 13: 1, 14: 3}, dest_age = {(10, 11): 4, (10, 12): 2, (11, 12): 2, (11, 13): 5, (12, 13): 6, (12, 14): 4, (13, 10): 3, (13, 14): 6, (14, 10): 5, (14, 11): 3} with sum = 40, tx_attempt_UAV = {10: [4], 11: [4], 12: [4], 13: [4], 14: [4]}, tx_attempt_dest = {(10, 11): [2], (10, 12): [2], (11, 12): [2], (11, 13): [1], (12, 13): [1], (12, 14): [2], (13, 10): [2], (13, 14): [1], (14, 10): [2], (14, 11): [3]}
+episode_wise_attempt_sample = 20
+episode_wise_success_sample = 20
+episode_wise_attempt_update = 18
+episode_wise_success_update = 18
+age_dist_UAV = {10: [1, 1, 1, 2], 11: [3, 2, 2, 2], 12: [2, 2, 2, 1], 13: [1, 1, 1, 1], 14: [2, 3, 3, 3]}, age_dist_dest = {(10, 11): [4, 3, 7, 4], (10, 12): [6, 3, 4, 2], (11, 12): [3, 6, 2, 2], (11, 13): [6, 2, 4, 5], (12, 13): [2, 5, 2, 6], (12, 14): [5, 2, 5, 4], (13, 10): [5, 7, 6, 3], (13, 14): [3, 4, 6, 6], (14, 10): [4, 5, 5, 5], (14, 11): [4, 5, 3, 3]}
+results for step 10 of episode 3
+attempt_sample = [20, 20, 20, 20]
+success_sample = [20, 20, 20, 20]
+attempt_update = [18, 18, 18, 18]
+success_update = [18, 18, 18, 18]
+
+*****************************************************
+
+
+MAD scheduling  RP  placement,  5  users - avg of final_step_rewards =  42.0  MIN and MAX of final_step_rewards =  40 ,  44  and avg of overall_ep_reward =  369.0  : end with final state of  [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]  with shape  (16,)
+5 users under MAD scheduling and RP placement are over
+
+
