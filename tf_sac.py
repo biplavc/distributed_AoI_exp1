@@ -1,19 +1,40 @@
 from tf_environment import *
+from create_graph_1 import *
+# if comet:
+#     from main_tf import experiment
 
+random.seed(42)
+np.random.seed(42)
+# tf.random.set_seed(42)
+
+tempdir = tempfile.gettempdir()
 
 ## source = https://github.com/tensorflow/agents/blob/master/docs/tutorials/7_SAC_minitaur_tutorial.ipynb
 
-## the final_returns is not implemented here as this code doesn't have asy is_step.is_last() step. But we oly plot user's age so we can still plot sum age at the BS using BS_age_dist
 
-def tf_sac(folder_name):
+def tf_sac(I, drones_coverage, folder_name, deployment, packet_update_loss, packet_sample_loss, periodicity, adj_matrix, tx_rx_pairs, tx_users):
     
-    # num_iterations = 100000 # @param {type:"integer"}
+    
+    all_actions = []    ## save all actions over all steps of all episodes  
+    print(f"\n\nSAC started for {I} users , coverage = {drones_coverage} with update_loss = {packet_update_loss}, sample_loss = {packet_sample_loss}, periodicity = {periodicity}, tx_rx_pairs = {tx_rx_pairs}, tx_users = {tx_users}, UL_capacity = {UL_capacity}, DL_capacity = {DL_capacity} and {deployment} deployment")
+    print(f"\n\nSAC started for {I} users , coverage = {drones_coverage} with update_loss = {packet_update_loss}, sample_loss = {packet_sample_loss}, periodicity = {periodicity},, tx_rx_pairs = {tx_rx_pairs}, tx_users = {tx_users}, UL_capacity = {UL_capacity}, DL_capacity = {DL_capacity} and {deployment} deployment", file = open(folder_name + "/results.txt", "a"), flush = True)
 
-    initial_collect_steps = 100 # 100 based on dqn, 10000 # @param {type:"integer"}
-    collect_steps_per_iteration = collect_episodes_per_iteration # 1 # @param {type:"integer"}
-    # replay_buffer_capacity = 10000 # @param {type:"integer"}
+    train_py_env = UAV_network(I, drones_coverage, "train net", folder_name, packet_update_loss, packet_sample_loss, periodicity, adj_matrix, tx_rx_pairs, tx_users)
+    eval_py_env = UAV_network(I, drones_coverage, "eval net", folder_name, packet_update_loss, packet_sample_loss, periodicity, adj_matrix, tx_rx_pairs, tx_users)
+    
+    collect_env = tf_py_environment.TFPyEnvironment(train_py_env) # doesn't print out
+    eval_env = tf_py_environment.TFPyEnvironment(eval_py_env)
 
-    batch_size = 64 # @param {type:"integer"}
+    collect_env.reset()
+    eval_env.reset()
+    
+    final_step_rewards = []
+    
+    sac_returns = []
+    
+    initial_collect_steps = 1000  # @param {type:"integer"}
+
+    batch_size = 16 # @param {type:"integer"}
 
     critic_learning_rate = 3e-4 # @param {type:"number"}
     actor_learning_rate = 3e-4 # @param {type:"number"}
@@ -23,35 +44,12 @@ def tf_sac(folder_name):
     gamma = 0.99 # @param {type:"number"}
     reward_scale_factor = 1.0 # @param {type:"number"}
 
-    actor_fc_layer_params = (32, 16)
-    critic_joint_fc_layer_params = (32, 16)
-
-    # log_interval = 500 # @param {type:"integer"}
-
-    # num_eval_episodes = 20 # @param {type:"integer"}
-    # eval_interval = 10000 # @param {type:"integer"}
-
-    policy_save_interval = 5000 # @param {type:"integer"}
+    actor_fc_layer_params = fc_layer_params
+    critic_joint_fc_layer_params = fc_layer_params
     
-    print(f'sac started', flush=True)
-    
-    ## ENVIRONMENT
-    
-    train_py_env = UAV_network(3,3, "train net")
-    eval_py_env = UAV_network(3,3, "eval net")
-
-    collect_env = tf_py_environment.TFPyEnvironment(train_py_env) # doesn't print out
-    eval_env = tf_py_environment.TFPyEnvironment(eval_py_env)    
-        
-    collect_env.reset()
-    eval_env.reset()
-      
-    final_step_rewards = []
-    
-    sac_returns = []
     
     # GPU AND STRATEGY
-    use_gpu = False #@param {type:"boolean"}
+    use_gpu = True #@param {type:"boolean"}
 
     strategy = strategy_utils.get_strategy(tpu=False, use_gpu=use_gpu)
     
@@ -70,7 +68,7 @@ def tf_sac(folder_name):
                 last_kernel_initializer='glorot_uniform')
         
     with strategy.scope():
-        actor_net = actor_distribution_network.ActorDistributionNetwork(  observation_spec, action_spec,       fc_layer_params=actor_fc_layer_params,           continuous_projection_net=(tanh_normal_projection_network.TanhNormalProjectionNetwork))
+        actor_net = actor_distribution_network.ActorDistributionNetwork(observation_spec, action_spec,       fc_layer_params=actor_fc_layer_params,      continuous_projection_net=(tanh_normal_projection_network.TanhNormalProjectionNetwork))
         
     
     with strategy.scope():
@@ -79,42 +77,40 @@ def tf_sac(folder_name):
         tf_agent = sac_agent.SacAgent(
                 time_step_spec,
                 action_spec,
-                actor_network=actor_net,
-                critic_network=critic_net,
-                actor_optimizer=tf.compat.v1.train.AdamOptimizer(
-                    learning_rate=actor_learning_rate),
-                critic_optimizer=tf.compat.v1.train.AdamOptimizer(
-                    learning_rate=critic_learning_rate),
-                alpha_optimizer=tf.compat.v1.train.AdamOptimizer(
-                    learning_rate=alpha_learning_rate),
-                target_update_tau=target_update_tau,
-                target_update_period=target_update_period,
-                td_errors_loss_fn=tf.math.squared_difference,
-                gamma=gamma,
-                reward_scale_factor=reward_scale_factor,
-                train_step_counter=train_step)
+                actor_network           = actor_net,
+                critic_network          = critic_net,
+                actor_optimizer         = tf.compat.v1.train.AdamOptimizer(learning_rate=actor_learning_rate),
+                critic_optimizer        = tf.compat.v1.train.AdamOptimizer(learning_rate=critic_learning_rate),
+                alpha_optimizer         = tf.compat.v1.train.AdamOptimizer(learning_rate=alpha_learning_rate),
+                target_update_tau       = target_update_tau,
+                target_update_period    = target_update_period,
+                td_errors_loss_fn       = tf.math.squared_difference,
+                gamma                   = gamma,
+                reward_scale_factor     = reward_scale_factor,
+                train_step_counter      = train_step)
 
         tf_agent.initialize()
         
     ## REPLAY BUFFER
     
-    table_name = 'uniform_table'
-    table = reverb.Table(
-        table_name,
-        max_size=replay_buffer_capacity,
-        sampler=reverb.selectors.Uniform(),
-        remover=reverb.selectors.Fifo(),
-        rate_limiter=reverb.rate_limiters.MinSize(1))
+    table_name  = 'uniform_table'
+    table       = reverb.Table(
+                table_name,
+                max_size     = replay_buffer_capacity,
+                sampler      = reverb.selectors.Uniform(),
+                remover      = reverb.selectors.Fifo(),
+                rate_limiter = reverb.rate_limiters.MinSize(1))
 
     reverb_server = reverb.Server([table])
     
     reverb_replay = reverb_replay_buffer.ReverbReplayBuffer(
-    tf_agent.collect_data_spec,
-    sequence_length=2,
-    table_name=table_name,
-    local_server=reverb_server)
+                    tf_agent.collect_data_spec,
+                    sequence_length = 2,
+                    table_name      = table_name,
+                    local_server    = reverb_server)
     
-    dataset = reverb_replay.as_dataset(sample_batch_size=batch_size, num_steps=2).prefetch(50)
+    dataset       = reverb_replay.as_dataset(sample_batch_size=batch_size, num_steps=2).prefetch(50)
+    
     experience_dataset_fn = lambda: dataset
     
     
@@ -138,20 +134,21 @@ def tf_sac(folder_name):
     
     env_step_metric = py_metrics.EnvironmentSteps()
     
-    collect_actor = actor.Actor(collect_env, collect_policy, train_step, steps_per_run=1, metrics=actor.collect_metrics(10), summary_dir=os.path.join(tempdir, learner.TRAIN_DIR),
-    observers=[rb_observer, env_step_metric])
+    collect_actor = actor.Actor(collect_env, collect_policy, train_step, steps_per_run=1, metrics=actor.collect_metrics(10), summary_dir=os.path.join(tempdir, learner.TRAIN_DIR),    observers=[rb_observer, env_step_metric])
     
     eval_actor = actor.Actor(eval_env, eval_policy, train_step, episodes_per_run=num_eval_episodes, metrics=actor.eval_metrics(num_eval_episodes), summary_dir=os.path.join(tempdir, 'eval'),)
     
     ## LEARNERS
     
     saved_model_dir = os.path.join(tempdir, learner.POLICY_SAVED_MODEL_DIR)
+    
+    policy_save_interval = 5000 # @param {type:"integer"}
 
     # Triggers to save the agent's policy checkpoints.
     learning_triggers = [
-        triggers.PolicySavedModelTrigger( saved_model_dir,           tf_agent, train_step, interval=policy_save_interval),         triggers.StepPerSecondLogTrigger(train_step, interval=1000),]
+        triggers.PolicySavedModelTrigger(saved_model_dir,        tf_agent, train_step, interval=policy_save_interval),       triggers.StepPerSecondLogTrigger(train_step, interval=1000),]
 
-    agent_learner = learner.Learner( tempdir, train_step, tf_agent,     experience_dataset_fn, triggers=learning_triggers)
+    agent_learner = learner.Learner( tempdir, train_step, tf_agent, experience_dataset_fn, triggers=learning_triggers)
     
     ##  METRICS AND EVALUATION
     
@@ -165,7 +162,7 @@ def tf_sac(folder_name):
     metrics = get_eval_metrics()
     
     def log_eval_metrics(step, metrics):
-        eval_results = (', ').join('{} = {:.6f}'.format(name, result) for name, result in metrics.items())
+        eval_results = (', ').join('{} = {:.2f}'.format(name, result) for name, result in metrics.items())
         print('step = {0}: {1}'.format(step, eval_results))
 
     log_eval_metrics(0, metrics)
@@ -178,6 +175,7 @@ def tf_sac(folder_name):
     # Evaluate the agent's policy once before training.
     avg_return = get_eval_metrics()["AverageReturn"]
     returns = [avg_return]
+    UAV_returns = [sum(eval_py_env.UAV_age.values())]
 
     for _ in range(num_iterations):
     # Training.
@@ -187,10 +185,11 @@ def tf_sac(folder_name):
         # Evaluating.
         step = agent_learner.train_step_numpy
 
-        if eval_interval and step % eval_interval == 0:
+        if step % eval_interval == 0:
             metrics = get_eval_metrics()
             log_eval_metrics(step, metrics)
             returns.append(metrics["AverageReturn"])
+            UAV_returns.append(sum(eval_py_env.UAV_age.values()))
 
         if log_interval and step % log_interval == 0:
             print('step = {0}: loss = {1}'.format(step, loss_info.loss.numpy()))
@@ -200,29 +199,32 @@ def tf_sac(folder_name):
     
     sac_returns = returns
     
-    pickle.dump(sac_returns, open(folder_name + "/SAC_returns.pickle", "wb"))
-    
-    # pickle.dump(final_step_rewards, open(folder_name + "/SAC_final_step_rewards.pickle", "wb"))
-    pickle.dump(eval_py_env.tx_attempt_dest, open(folder_name + "/SAC_tx_attempt_BS.pickle", "wb"))
-    pickle.dump(eval_py_env.tx_attempt_UAV, open(folder_name + "/SAC_tx_attempt_UAV.pickle", "wb"))
-    pickle.dump(eval_py_env.preference, open(folder_name + "/SAC_preference.pickle", "wb")) 
-        
-    # print(f'final episode\'s age = ', final_age, file=open(folder_name + "/results.txt", "a"), flush = True)
+     
+    pickle.dump(sac_returns, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_returns.pickle", "wb"))
+    pickle.dump(UAV_returns, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_UAV_returns.pickle", "wb"))
+    pickle.dump(final_step_rewards, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_final_step_rewards.pickle", "wb"))
+    pickle.dump(eval_py_env.tx_attempt_dest, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_tx_attempt_dest.pickle", "wb"))
+    pickle.dump(eval_py_env.tx_attempt_UAV, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_tx_attempt_UAV.pickle", "wb"))
+    pickle.dump(eval_py_env.preference, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_preference.pickle", "wb")) 
 
-    # print("deployment =", deployment, ",scheduling = ", scheduling, ", overall average sum BS age = ", np.mean(age_BS), file=open(folder_name + "/results.txt", "a"), flush = True)
+    pickle.dump(eval_py_env.sample_time, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_sample_time.pickle", "wb"))
 
-    pickle.dump(eval_py_env.dest_age, open(folder_name + "/SAC_BS_age.pickle", "wb")) 
-    pickle.dump(eval_py_env.UAV_age, open(folder_name + "/SAC_UAV_age.pickle", "wb"))
-    pickle.dump(eval_py_env.age_dist_dest, open(folder_name + "/SAC_age_dist_BS.pickle", "wb"))
-    pickle.dump(eval_py_env.age_dist_UAV, open(folder_name + "/SAC_age_dist_UAV.pickle", "wb"))
-    # for variable users per drone, all these above codes have to be taken inside the scheduling loop like the tx_attempt pickle
+    pickle.dump(eval_py_env.dest_age, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_dest_age.pickle", "wb")) 
+    pickle.dump(eval_py_env.UAV_age, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_UAV_age.pickle", "wb"))
+    pickle.dump(eval_py_env.age_dist_dest, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_age_dist_dest.pickle", "wb"))
+    pickle.dump(eval_py_env.age_dist_UAV, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_age_dist_UAV.pickle", "wb"))
     
-    return sac_returns
-    
-    
-    
-    
+    pickle.dump(eval_py_env.attempt_sample, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_attempt_sample.pickle", "wb"))
+    pickle.dump(eval_py_env.success_sample, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_success_sample.pickle", "wb"))
+    pickle.dump(eval_py_env.attempt_update, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_attempt_update.pickle", "wb"))
+    pickle.dump(eval_py_env.success_update, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_success_update.pickle", "wb"))
     
     
+    print("\nSAC scheduling ", deployment, " placement, ", I, " users - avg of final_step_rewards = ", np.mean(final_step_rewards[-5:]), " MIN and MAX of final_step_rewards = ", np.min(final_step_rewards),", ", np.max(final_step_rewards), " and avg of overall_ep_reward = ", np.mean(sac_returns[-5:]), " : end with final state of ", eval_py_env._state, " with shape ", np.shape(eval_py_env._state))
     
+    print("\nSAC scheduling ", deployment, " placement, ", I, " users - avg of final_step_rewards = ", np.mean(final_step_rewards[-5:]), " MIN and MAX of final_step_rewards = ", np.min(final_step_rewards),", ", np.max(final_step_rewards), " and avg of overall_ep_reward = ", np.mean(sac_returns[-5:]), " : end with final state of ", eval_py_env._state, " with shape ", np.shape(eval_py_env._state), file = open(folder_name + "/results.txt", "a"), flush = True)
+
+    
+    print(f"greedy ended for {I} users and {deployment} deployment")
+    return sac_returns, final_step_rewards, all_actions
     

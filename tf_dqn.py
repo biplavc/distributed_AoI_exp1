@@ -11,6 +11,7 @@ np.random.seed(42)
 
 # source - https://www.tensorflow.org/agents/tutorials/1_dqn_tutorial
 
+
 def tf_dqn(I, drones_coverage, folder_name, deployment, packet_update_loss, packet_sample_loss, periodicity, adj_matrix, tx_rx_pairs, tx_users):  
     
    
@@ -24,14 +25,10 @@ def tf_dqn(I, drones_coverage, folder_name, deployment, packet_update_loss, pack
     train_env = tf_py_environment.TFPyEnvironment(train_py_env) # doesn't print out
     eval_env = tf_py_environment.TFPyEnvironment(eval_py_env)
     
-        
     train_env.reset()
     eval_env.reset()
     
     final_step_rewards = []
-    
-    # print("action space size is ", train_py_env.action_size, " and they are ", train_py_env.actions_space,  file=open(folder_name + "/results.txt", "a"), flush = True)
-    # print("action space size is ", train_py_env.action_size, " and they are ", train_py_env.actions_space,"\n")
     
     dqn_returns = []
     
@@ -241,15 +238,12 @@ def tf_dqn(I, drones_coverage, folder_name, deployment, packet_update_loss, pack
     pickle.dump(eval_py_env.attempt_update, open(folder_name + "/" + deployment + "/" + str(I) + "U_dqn_attempt_update.pickle", "wb"))
     pickle.dump(eval_py_env.success_update, open(folder_name + "/" + deployment + "/" + str(I) + "U_dqn_success_update.pickle", "wb"))
     
-    # for variable users per drone, all these above codes have to be taken inside the scheduling loop like the tx_attempt pickle
-    # pickle.dump(all_actions, open(folder_name + "/" + deployment + "/" + str(I) + "U_all_actions_dqn.pickle", "wb"))
-    
     
     print("\nDQN scheduling ", deployment, " placement, ", I, " users - avg of final_step_rewards = ", np.mean(final_step_rewards[-5:]), " MIN and MAX of final_step_rewards = ", np.min(final_step_rewards),", ", np.max(final_step_rewards), " and avg of overall_ep_reward = ", np.mean(dqn_returns[-5:]), " : end with final state of ", eval_py_env._state, " with shape ", np.shape(eval_py_env._state))
     
     print("\nDQN scheduling ", deployment, " placement, ", I, " users - avg of final_step_rewards = ", np.mean(final_step_rewards[-5:]), " MIN and MAX of final_step_rewards = ", np.min(final_step_rewards),", ", np.max(final_step_rewards), " and avg of overall_ep_reward = ", np.mean(dqn_returns[-5:]), " : end with final state of ", eval_py_env._state, " with shape ", np.shape(eval_py_env._state), file = open(folder_name + "/results.txt", "a"), flush = True)
 
     
-    print(f"greedy ended for {I} users and {deployment} deployment")
+    print(f"DQN ended for {I} users and {deployment} deployment")
     return dqn_returns, final_step_rewards, all_actions
     

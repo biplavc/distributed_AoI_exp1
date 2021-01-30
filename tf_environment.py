@@ -29,7 +29,7 @@ import base64
 
 import matplotlib.pyplot as plt
 import os
-# import reverb
+import reverb
 import tempfile
 import functools
 import operator
@@ -78,6 +78,15 @@ from tf_agents.policies import random_py_policy
 from tf_agents.replay_buffers import reverb_replay_buffer
 from tf_agents.replay_buffers import reverb_utils
 
+## sac
+# from tf_agents.train import actor
+# from tf_agents.train import learner
+# from tf_agents.train import triggers
+# from tf_agents.train.utils import spec_utils
+# from tf_agents.train.utils import strategy_utils
+# from tf_agents.train.utils import train_utils
+## sac ends
+
 tempdir = tempfile.gettempdir()
 random.seed(42)
 # tf.random.set_seed(42)
@@ -96,9 +105,9 @@ sample_error_in_CSI = False ## has no meaning if CSI_as_state=False; if CSI_as_s
 MAX_STEPS = 10 # 20  
 
 set_gamma = 0.99
-UL_capacity = 3 # 2 # L, sample
+UL_capacity = 2 # 2 # L, sample
 
-DL_capacity = 2 # 4 # K, update
+DL_capacity = 1 # 4 # K, update
 random_episodes = 10000 # 100_000
 coverage_capacity = 3 # max users 1 UAV can cover, used in create_graph_1
 

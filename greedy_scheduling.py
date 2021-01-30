@@ -150,8 +150,8 @@ def find_greedy_action(eval_env): ## maximal age difference
 
 
 def greedy_scheduling(I, drones_coverage, folder_name, deployment, packet_update_loss, packet_sample_loss, periodicity, adj_matrix, tx_rx_pairs, tx_users):  ## greedy 
-    print(f"\n\ngreedy started for {I} users , coverage = {drones_coverage} with update_loss = {packet_update_loss}, sample_loss = {packet_sample_loss}, periodicity = {periodicity}, tx_rx_pairs = {tx_rx_pairs}, tx_users = {tx_users}  and {deployment} deployment")
-    print(f"\n\ngreedy started for {I} users , coverage = {drones_coverage} with update_loss = {packet_update_loss}, sample_loss = {packet_sample_loss}, periodicity = {periodicity}, tx_rx_pairs = {tx_rx_pairs}, tx_users = {tx_users}  and {deployment} deployment", file = open(folder_name + "/results.txt", "a"), flush = True)
+    print(f"\n\ngreedy started for {I} users , coverage = {drones_coverage} with update_loss = {packet_update_loss}, sample_loss = {packet_sample_loss}, periodicity = {periodicity}, tx_rx_pairs = {tx_rx_pairs}, tx_users = {tx_users}  and {deployment} deployment, UL_capacity = {UL_capacity}, DL_capacity = {DL_capacity} and {deployment} deployment")
+    print(f"\n\ngreedy started for {I} users , coverage = {drones_coverage} with update_loss = {packet_update_loss}, sample_loss = {packet_sample_loss}, periodicity = {periodicity}, tx_rx_pairs = {tx_rx_pairs}, tx_users = {tx_users}  and {deployment} deployment, UL_capacity = {UL_capacity}, DL_capacity = {DL_capacity} and {deployment} deployment", file = open(folder_name + "/results.txt", "a"), flush = True)
     # do scheduling for MAX_STEPS random_episodes times and take the average
     final_step_rewards = []
     overall_ep_reward  = []
@@ -219,7 +219,7 @@ def greedy_scheduling(I, drones_coverage, folder_name, deployment, packet_update
                 
             if verbose:
                 print(f"\n\ncurrent episode = {ep}\n\n")
-                print(f" step = {eval_env.current_step}, greedy selection is {selected_action}, actual action is {action}, updated_users = {updated_users}, sampled_users = {sampled_users}")
+                print(f"step = {eval_env.current_step}, greedy selection is {selected_action}, actual action is {action}, updated_users = {updated_users}, sampled_users = {sampled_users}")
                            
             if eval_env.current_step==1: ## updating
             # step 1 so dest has nothing to get from UAV
@@ -294,17 +294,16 @@ def greedy_scheduling(I, drones_coverage, folder_name, deployment, packet_update
                 print(f"time = {eval_env.current_step}, sample_time = {sample_time}")
                 print(f"tx_attempt_UAV has become {eval_env.tx_attempt_UAV} and tx_attempt_dest has become {eval_env.tx_attempt_dest}")
            
-                print(f"\n step = {eval_env.current_step} of episode {ep} ended, UAV_age = {eval_env.UAV_age}, dest_age = {eval_env.dest_age}, tx_attempt_UAV = {eval_env.tx_attempt_UAV}, tx_attempt_dest = {eval_env.tx_attempt_dest}") ##, preference = {eval_env.preference}")
+                print(f"\n step = {eval_env.current_step} of episode {ep} ended, UAV_age = {eval_env.UAV_age} with sum = {np.sum(list(eval_env.UAV_age.values()))}, dest_age = {eval_env.dest_age} with sum = {np.sum(list(eval_env.dest_age.values()))}, tx_attempt_UAV = {eval_env.tx_attempt_UAV}, tx_attempt_dest = {eval_env.tx_attempt_dest}") ##, preference = {eval_env.preference}")
             
                 print(f"episode_wise_attempt_sample = {episode_wise_attempt_sample}")
                 print(f"episode_wise_success_sample = {episode_wise_success_sample}")
                 print(f"episode_wise_attempt_update = {episode_wise_attempt_update}")
                 print(f"episode_wise_success_update = {episode_wise_success_update}")
-                time.sleep(2)
+                # time.sleep(2)
             
             if eval_env.current_step==MAX_STEPS:
                 final_reward = np.sum(list(eval_env.dest_age.values()))
-                # print("sum age at dest = ", final_reward)
                 
             eval_env.current_step += 1
             ep_reward = ep_reward + np.sum(list(eval_env.dest_age.values()))
@@ -334,7 +333,7 @@ def greedy_scheduling(I, drones_coverage, folder_name, deployment, packet_update
             print(f"success_sample = {success_sample}")
             print(f"attempt_update = {attempt_update}")
             print(f"success_update = {success_update}")
-            time.sleep(10)
+            # time.sleep(10)
             print(f"\n*****************************************************\n")
         
         

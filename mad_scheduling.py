@@ -219,7 +219,7 @@ def mad_scheduling(I, drones_coverage, folder_name, deployment, packet_update_lo
                 
             if verbose:
                 print(f"\n\ncurrent episode = {ep}\n\n")
-                print(f" step = {eval_env.current_step}, mad selection is {selected_action}, actual action is {action}, updated_users = {updated_users}, sampled_users = {sampled_users}")
+                print(f"step = {eval_env.current_step}, mad selection is {selected_action}, actual action is {action}, updated_users = {updated_users}, sampled_users = {sampled_users}")
                 
             if eval_env.current_step==1: ## updating
             # step 1 so dest has nothing to get from UAV

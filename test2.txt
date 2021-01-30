@@ -3657,3 +3657,73 @@ MAD scheduling  RP  placement,  3  users - avg of final_step_rewards =  18.0  MI
 3 users under MAD scheduling and RP placement are over
 
 
+_________________________________________________________________________________________________________________________
+NOTE : checking if greedy also has the same issue. 
+
+GPUs are []
+experiment is 1 with test_case = True, packet_loss = False, periodic_generation = False
+passed arguments are [('RP', 3, 'greedy')]
+
+
+greedy started for 3 users , coverage = [[10, 11, 12]] with update_loss = {(10, 11): -1, (10, 12): -1, (11, 10): -1, (11, 12): -1, (12, 10): -1, (12, 11): -1}, sample_loss = {10: -1, 11: -1, 12: -1}, periodicity = {10: 1, 11: 1, 12: 1}, tx_rx_pairs = [[10, 11], [10, 12], [11, 10], [11, 12], [12, 10], [12, 11]], tx_users = [10, 11, 12]  and RP deployment, UL_capacity = 3, DL_capacity = 2 and RP deployment
+
+greedy scheduling  RP  placement,  3  users - avg of final_step_rewards =  18.0  MIN and MAX of final_step_rewards =  18 ,  18  and avg of overall_ep_reward =  172.0  : end with final state of  [1 1 1 1 1 1 1 1 1 1]  with shape  (10,)
+3 users under greedy scheduling and RP placement are over
+
+
+GPUs are []
+experiment is 1 with test_case = True, packet_loss = False, periodic_generation = False
+passed arguments are [('RP', 3, 'greedy')]
+
+
+greedy started for 3 users , coverage = [[10, 11, 12]] with update_loss = {(10, 11): -1, (10, 12): -1, (11, 10): -1, (11, 12): -1, (12, 10): -1, (12, 11): -1}, sample_loss = {10: -1, 11: -1, 12: -1}, periodicity = {10: 1, 11: 1, 12: 1}, tx_rx_pairs = [[10, 11], [10, 12], [11, 10], [11, 12], [12, 10], [12, 11]], tx_users = [10, 11, 12]  and RP deployment, UL_capacity = 3, DL_capacity = 1 and RP deployment
+
+greedy scheduling  RP  placement,  3  users - avg of final_step_rewards =  27.0  MIN and MAX of final_step_rewards =  27 ,  27  and avg of overall_ep_reward =  235.0  : end with final state of  [1 1 1 1 1 1 1 1 1 1]  with shape  (10,)
+3 users under greedy scheduling and RP placement are over
+
+
+GPUs are []
+experiment is 1 with test_case = True, packet_loss = False, periodic_generation = False
+passed arguments are [('RP', 3, 'greedy')]
+
+
+greedy started for 3 users , coverage = [[10, 11, 12]] with update_loss = {(10, 11): -1, (10, 12): -1, (11, 10): -1, (11, 12): -1, (12, 10): -1, (12, 11): -1}, sample_loss = {10: -1, 11: -1, 12: -1}, periodicity = {10: 1, 11: 1, 12: 1}, tx_rx_pairs = [[10, 11], [10, 12], [11, 10], [11, 12], [12, 10], [12, 11]], tx_users = [10, 11, 12]  and RP deployment, UL_capacity = 2, DL_capacity = 1 and RP deployment
+
+greedy scheduling  RP  placement,  3  users - avg of final_step_rewards =  28.9915  MIN and MAX of final_step_rewards =  27 ,  33  and avg of overall_ep_reward =  247.9869  : end with final state of  [1 1 1 1 1 1 1 1 1 1]  with shape  (10,)
+3 users under greedy scheduling and RP placement are over
+
+
+#################################################################
+GPUs are []
+experiment is 1 with test_case = True, packet_loss = False, periodic_generation = False
+passed arguments are [('RP', 3, 'greedy')]
+
+
+greedy started for 3 users , coverage = [[10, 11, 12]] with update_loss = {(10, 11): -1, (10, 12): -1, (11, 10): -1, (11, 12): -1, (12, 10): -1, (12, 11): -1}, sample_loss = {10: -1, 11: -1, 12: -1}, periodicity = {10: 1, 11: 1, 12: 1}, tx_rx_pairs = [[10, 11], [10, 12], [11, 10], [11, 12], [12, 10], [12, 11]], tx_users = [10, 11, 12]  and RP deployment, UL_capacity = 2, DL_capacity = 2 and RP deployment
+
+greedy scheduling  RP  placement,  3  users - avg of final_step_rewards =  20.226  MIN and MAX of final_step_rewards =  18 ,  24  and avg of overall_ep_reward =  189.0666  : end with final state of  [1 1 1 1 1 1 1 1 1 1]  with shape  (10,)
+3 users under greedy scheduling and RP placement are over
+
+
+GPUs are []
+experiment is 1 with test_case = True, packet_loss = False, periodic_generation = False
+passed arguments are [('RP', 3, 'greedy')]
+
+
+greedy started for 3 users , coverage = [[10, 11, 12]] with update_loss = {(10, 11): -1, (10, 12): -1, (11, 10): -1, (11, 12): -1, (12, 10): -1, (12, 11): -1}, sample_loss = {10: -1, 11: -1, 12: -1}, periodicity = {10: 1, 11: 1, 12: 1}, tx_rx_pairs = [[10, 11], [10, 12], [11, 10], [11, 12], [12, 10], [12, 11]], tx_users = [10, 11, 12]  and RP deployment, UL_capacity = 2, DL_capacity = 3 and RP deployment
+
+greedy scheduling  RP  placement,  3  users - avg of final_step_rewards =  16.4059  MIN and MAX of final_step_rewards =  15 ,  19  and avg of overall_ep_reward =  159.6647  : end with final state of  [1 1 1 1 1 1 1 1 1 1]  with shape  (10,)
+3 users under greedy scheduling and RP placement are over
+
+
+GPUs are []
+experiment is 1 with test_case = True, packet_loss = False, periodic_generation = False
+passed arguments are [('RP', 3, 'greedy')]
+
+
+greedy started for 3 users , coverage = [[10, 11, 12]] with update_loss = {(10, 11): -1, (10, 12): -1, (11, 10): -1, (11, 12): -1, (12, 10): -1, (12, 11): -1}, sample_loss = {10: -1, 11: -1, 12: -1}, periodicity = {10: 1, 11: 1, 12: 1}, tx_rx_pairs = [[10, 11], [10, 12], [11, 10], [11, 12], [12, 10], [12, 11]], tx_users = [10, 11, 12]  and RP deployment, UL_capacity = 2, DL_capacity = 1 and RP deployment
+
+greedy scheduling  RP  placement,  3  users - avg of final_step_rewards =  28.9915  MIN and MAX of final_step_rewards =  27 ,  33  and avg of overall_ep_reward =  247.9869  : end with final state of  [1 1 1 1 1 1 1 1 1 1]  with shape  (10,)
+3 users under greedy scheduling and RP placement are over
+
+
