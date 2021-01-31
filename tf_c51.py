@@ -16,8 +16,8 @@ def tf_c51(I, drones_coverage, folder_name, deployment, packet_update_loss, pack
     print(f"\n\nc51 started for {I} users , coverage = {drones_coverage} with update_loss = {packet_update_loss}, sample_loss = {packet_sample_loss}, periodicity = {periodicity}, tx_rx_pairs = {tx_rx_pairs}, tx_users = {tx_users} and {deployment} deployment")
     print(f"\n\nc51 started for {I} users , coverage = {drones_coverage} with update_loss = {packet_update_loss}, sample_loss = {packet_sample_loss}, periodicity = {periodicity}, tx_rx_pairs = {tx_rx_pairs}, tx_users = {tx_users} and {deployment} deployment", file = open(folder_name + "/results.txt", "a"), flush = True)
     
-    train_py_env = UAV_network(I, drones_coverage, "train net", folder_name, packet_update_loss, packet_sample_loss)
-    eval_py_env = UAV_network(I, drones_coverage, "eval net", folder_name, packet_update_loss, packet_sample_loss)
+    train_py_env = UAV_network(I, drones_coverage, "train net", folder_name, packet_update_loss, packet_sample_loss, periodicity, adj_matrix, tx_rx_pairs, tx_users)
+    eval_py_env = UAV_network(I, drones_coverage, "train net", folder_name, packet_update_loss, packet_sample_loss, periodicity, adj_matrix, tx_rx_pairs, tx_users)
 
     train_env = tf_py_environment.TFPyEnvironment(train_py_env) # doesn't print out
     eval_env = tf_py_environment.TFPyEnvironment(eval_py_env)    

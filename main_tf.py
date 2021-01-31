@@ -239,6 +239,7 @@ def do_scheduling(deployment, I, scheduler):
         pickle.dump(c51_all_actions, open(folder_name + "/" + deployment + "/" + str(I) + "U_c51_all_actions.pickle", "wb"))
 
     if scheduler == "sac":
+        print(f"NotImplementedError: SacAgent does not currently support discrete actions.")
         t1 = time.time()
         sac_overall[I], sac_final[I], sac_all_actions[I] = tf_sac(I, drones_coverage, folder_name, deployment, packet_update_loss, packet_sample_loss, periodicity, adj_matrix, tx_rx_pairs, tx_users)  
         t2 = time.time()
@@ -277,7 +278,7 @@ if __name__ == '__main__':
 
     deployments = ["RP"] #, "RP"] #, "MDS"]
     
-    schedulers  = ["random", "greedy", "MAD", "dqn", "c51", "sac"] ##     scheduler_options  = ["random", "greedy", "MAD", "dqn", "c51", "sac"]
+    schedulers  = ["c51", "dqn", "random", "greedy", "MAD"] ##     scheduler_options  = ["random", "greedy", "MAD", "dqn", "c51", "sac"]
     
     limit_memory = False ## enabling this makes the code not being able to find CUDA device
     

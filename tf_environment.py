@@ -108,7 +108,7 @@ set_gamma = 0.99
 UL_capacity = 2 # 2 # L, sample
 
 DL_capacity = 1 # 4 # K, update
-random_episodes = 10000 # 100_000
+random_episodes = 100000 # 100_000
 coverage_capacity = 3 # max users 1 UAV can cover, used in create_graph_1
 
 num_iterations = 1_000_000
