@@ -2,12 +2,9 @@ from tf_environment import *
 from create_graph_1 import *
 # if comet:
 #     from main_tf import experiment
-
 random.seed(42)
 np.random.seed(42)
 # tf.random.set_seed(42)
-
-### collect_steps_per_iteration -> collect_episodes_per_iteration
 
 # source - https://www.tensorflow.org/agents/tutorials/1_dqn_tutorial
 

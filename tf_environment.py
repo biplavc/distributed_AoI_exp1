@@ -29,7 +29,7 @@ import base64
 
 import matplotlib.pyplot as plt
 import os
-import reverb
+# import reverb
 import tempfile
 import functools
 import operator
@@ -148,6 +148,8 @@ collect_episodes_per_iteration = 1 # @param {type:"integer"} # collect_episode r
 log_interval = 10_000 # @param {type:"integer"} # how frequently to print out in console
 
 num_eval_episodes = 1 ## @param {type:"integer"} # this decides how many times compute_avg_return will run. compute_avg_return runs first in the beginning without any training to show random actions. Then collect_episode(...) starts filling the buffer and agent starts training. And in the training process if the current iteration % eval_interval, compute_avg_return(...) runs for num_eval_episodes on eval_env to see append the new rewards. Every time this is run, returns is appended and this is what is shown as the final performance
+
+num_eval_episodes_c51 = 10 ## in the c51 example its 10 so not keeping the usual 1 here
 
 eval_interval = 100 #100 # @param {type:"integer"} # # compute_avg_return called every eval_interval, i.e avg_return calculated filled every eval_interval. this is what is shown in plot 
 

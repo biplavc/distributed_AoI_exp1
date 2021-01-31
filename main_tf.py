@@ -67,15 +67,15 @@ def do_scheduling(deployment, I, scheduler):
         print(f"under experiment {experiment}", file = open(folder_name + "/results.txt", "a"), flush = True)
 
         drones_needed           = 1
-        users_per_drone         = [3]
-        # adj_matrix              = np.array([[0, 1, 1, 0, 0],
-        #                                     [0, 0, 1, 1, 0],
-        #                                     [0, 0, 0, 1, 1],
-        #                                     [1, 0, 0, 0, 1],
-        #                                     [1, 1, 0, 0, 0]])
-        adj_matrix              = np.array([[0, 1, 1],
-                                            [1, 0, 1],
-                                            [1, 1, 0]])
+        users_per_drone         = [5] ## biplav
+        adj_matrix              = np.array([[0, 1, 1, 0, 0],
+                                            [0, 0, 1, 1, 0],
+                                            [0, 0, 0, 1, 1],
+                                            [1, 0, 0, 0, 1],
+                                            [1, 1, 0, 0, 0]])
+        # adj_matrix              = np.array([[0, 1, 1],
+        #                                     [1, 0, 1],
+        #                                     [1, 1, 0]])
         
         tx_rx_pairs = []
         tx_users    = []
@@ -231,12 +231,12 @@ def do_scheduling(deployment, I, scheduler):
 
     if scheduler == "c51":
         t1 = time.time()
-        c51_overall[I], c51_final[I], c51_all_actions[I] = tf_c51(I, drones_coverage, folder_name, deployment, packet_update_loss, packet_sample_loss, periodicity, adj_matrix)
+        c51_overall[I], c51_final[I], c51_all_actions[I] = tf_dqn(I, drones_coverage, folder_name, deployment, packet_update_loss, packet_sample_loss, periodicity, adj_matrix, tx_rx_pairs, tx_users)
         t2 = time.time()
         print("c51 for ", I, " users took ", t2-t1, " seconds to complete", file=open(folder_name + "/results.txt", "a"), flush=True)
         pickle.dump(c51_overall, open(folder_name + "/" + deployment + "/" + str(I) + "U_c51_overall.pickle", "wb")) 
-        pickle.dump(c51_final, open(folder_name + "/" + deployment + "/" + str(I) + "U_c51_final.pickle", "wb")) 
-        pickle.dump(c51_all_actions, open(folder_name + "/" + deployment + "/" + str(I) + "U_c51_all_actions.pickle", "wb")) 
+        pickle.dump(dqn_final, open(folder_name + "/" + deployment + "/" + str(I) + "U_c51_final.pickle", "wb"))
+        pickle.dump(dqn_all_actions, open(folder_name + "/" + deployment + "/" + str(I) + "U_c51_all_actions.pickle", "wb"))
 
     if scheduler == "sac":
         t1 = time.time()
@@ -276,11 +276,9 @@ if __name__ == '__main__':
 
     print("num_iterations = ",num_iterations, ", random_episodes = ", random_episodes,", DL_capacity = ", DL_capacity, ", UL_capacity = ", UL_capacity,",  MAX_STEPS = ", MAX_STEPS, " gamma = ", set_gamma, ", learning_rate = ", learning_rate, ", fc_layer_params = ", fc_layer_params, ", replay_buffer_capacity = ", replay_buffer_capacity, ", coverage_capacity = ", coverage_capacity, ", L = ", L, ", B = ", B, ", R = ", R, ", r = ", r,  "\n", file = open(folder_name + "/results.txt", "a"), flush = True)
 
-# export LD_LIBRARY_PATH = /path/to/conda/envs/tf1/lib conda create --name tf1 --clone tf
-
     deployments = ["RP"] #, "RP"] #, "MDS"]
     
-    schedulers  = ["sac"] ##     scheduler_options  = ["random", "greedy", "MAD", "dqn", "c51", "sac"]
+    schedulers  = ["c51"] ##     scheduler_options  = ["random", "greedy", "MAD", "dqn", "c51", "sac"]
     
     limit_memory = False ## enabling this makes the code not being able to find CUDA device
     
@@ -329,7 +327,7 @@ if __name__ == '__main__':
         periodic_generation = True
     
     if test_case:
-        users = [3] ## will get changed accordingly inside the loop above
+        users = [5] ## will get changed accordingly inside the loop above ## biplav
     else:
         users = [8,10]
 
