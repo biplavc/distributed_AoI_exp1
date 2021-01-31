@@ -231,22 +231,21 @@ def do_scheduling(deployment, I, scheduler):
 
     if scheduler == "c51":
         t1 = time.time()
-        c51_overall[I], c51_final[I], c51_all_actions[I] = tf_dqn(I, drones_coverage, folder_name, deployment, packet_update_loss, packet_sample_loss, periodicity, adj_matrix, tx_rx_pairs, tx_users)
+        c51_overall[I], c51_final[I], c51_all_actions[I] = tf_c51(I, drones_coverage, folder_name, deployment, packet_update_loss, packet_sample_loss, periodicity, adj_matrix, tx_rx_pairs, tx_users)
         t2 = time.time()
         print("c51 for ", I, " users took ", t2-t1, " seconds to complete", file=open(folder_name + "/results.txt", "a"), flush=True)
         pickle.dump(c51_overall, open(folder_name + "/" + deployment + "/" + str(I) + "U_c51_overall.pickle", "wb")) 
-        pickle.dump(dqn_final, open(folder_name + "/" + deployment + "/" + str(I) + "U_c51_final.pickle", "wb"))
-        pickle.dump(dqn_all_actions, open(folder_name + "/" + deployment + "/" + str(I) + "U_c51_all_actions.pickle", "wb"))
+        pickle.dump(c51_final, open(folder_name + "/" + deployment + "/" + str(I) + "U_c51_final.pickle", "wb"))
+        pickle.dump(c51_all_actions, open(folder_name + "/" + deployment + "/" + str(I) + "U_c51_all_actions.pickle", "wb"))
 
     if scheduler == "sac":
         t1 = time.time()
-        #with tf.device('/CPU:0'):
-        greedy_overall[I], greedy_final[I], greedy_all_actions[I] = greedy_scheduling(I, drones_coverage, folder_name, deployment, packet_update_loss, packet_sample_loss, periodicity, adj_matrix, tx_rx_pairs, tx_users)  
+        sac_overall[I], sac_final[I], sac_all_actions[I] = tf_sac(I, drones_coverage, folder_name, deployment, packet_update_loss, packet_sample_loss, periodicity, adj_matrix, tx_rx_pairs, tx_users)  
         t2 = time.time()
         print("sac for ", I, " users took ", t2-t1, " seconds to complete", file=open(folder_name + "/results.txt", "a"), flush=True)
-        pickle.dump(greedy_overall, open(folder_name + "/" + deployment + "/" + str(I) + "U_greedy_overall.pickle", "wb")) 
-        pickle.dump(greedy_final, open(folder_name + "/" + deployment + "/" + str(I) + "U_greedy_final.pickle", "wb"))
-        pickle.dump(greedy_all_actions, open(folder_name + "/" + deployment + "/" + str(I) + "_greedy_all_actions.pickle", "wb")) 
+        pickle.dump(sac_overall, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_overall.pickle", "wb")) 
+        pickle.dump(sac_final, open(folder_name + "/" + deployment + "/" + str(I) + "U_sac_final.pickle", "wb"))
+        pickle.dump(sac_all_actions, open(folder_name + "/" + deployment + "/" + str(I) + "_sac_all_actions.pickle", "wb")) 
         
 
     print(f"{I} users under {scheduler} scheduling and {deployment} placement are over\n\n", file=open(folder_name + "/results.txt", "a"), flush=True)
@@ -278,7 +277,7 @@ if __name__ == '__main__':
 
     deployments = ["RP"] #, "RP"] #, "MDS"]
     
-    schedulers  = ["c51"] ##     scheduler_options  = ["random", "greedy", "MAD", "dqn", "c51", "sac"]
+    schedulers  = ["random", "greedy", "MAD", "dqn", "c51", "sac"] ##     scheduler_options  = ["random", "greedy", "MAD", "dqn", "c51", "sac"]
     
     limit_memory = False ## enabling this makes the code not being able to find CUDA device
     
@@ -359,6 +358,10 @@ if __name__ == '__main__':
     mad_overall = {}
     mad_final   = {}
     mad_all_actions = {}
+    
+    sac_overall = {}
+    sac_final   = {}
+    sac_all_actions = {}
 
     pool = mp.Pool(mp.cpu_count())
     print(f"pool is {pool} \n\n", file = open(folder_name + "/results.txt", "a"))

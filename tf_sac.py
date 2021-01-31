@@ -145,8 +145,7 @@ def tf_sac(I, drones_coverage, folder_name, deployment, packet_update_loss, pack
     policy_save_interval = 5000 # @param {type:"integer"}
 
     # Triggers to save the agent's policy checkpoints.
-    learning_triggers = [
-        triggers.PolicySavedModelTrigger(saved_model_dir,        tf_agent, train_step, interval=policy_save_interval),       triggers.StepPerSecondLogTrigger(train_step, interval=1000),]
+    learning_triggers = [triggers.PolicySavedModelTrigger(saved_model_dir, tf_agent, train_step, interval=policy_save_interval),   triggers.StepPerSecondLogTrigger(train_step, interval=1000),]
 
     agent_learner = learner.Learner( tempdir, train_step, tf_agent, experience_dataset_fn, triggers=learning_triggers)
     
@@ -225,6 +224,6 @@ def tf_sac(I, drones_coverage, folder_name, deployment, packet_update_loss, pack
     print("\nSAC scheduling ", deployment, " placement, ", I, " users - avg of final_step_rewards = ", np.mean(final_step_rewards[-5:]), " MIN and MAX of final_step_rewards = ", np.min(final_step_rewards),", ", np.max(final_step_rewards), " and avg of overall_ep_reward = ", np.mean(sac_returns[-5:]), " : end with final state of ", eval_py_env._state, " with shape ", np.shape(eval_py_env._state), file = open(folder_name + "/results.txt", "a"), flush = True)
 
     
-    print(f"greedy ended for {I} users and {deployment} deployment")
+    print(f"SAC ended for {I} users and {deployment} deployment")
     return sac_returns, final_step_rewards, all_actions
     
