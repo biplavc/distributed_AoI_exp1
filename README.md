@@ -6,4 +6,6 @@
 
 3. To make all devices completely identical from both sender and receiver perspective, adjacency matrix has been adjusted accordingly. Also UL capacity = 2, DL capacity =4 (as UL of 2 means 4 DL links can have fresh information in the next slot). MAD should be better as here no memory needed and each step the MAD action should be best. ARC folder - d_AOI_3.
 
+All these are channel specific, next will be RB specific
+
 above folders are in old folder of ARC.
